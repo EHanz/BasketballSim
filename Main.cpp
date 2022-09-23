@@ -32,7 +32,7 @@ void loadFromCSV (const std::string& filename)
             row.push_back (cell);
         }
             
-        if ( !row.empty () )
+        if (!row.empty ())
         {
             matrix.push_back (row);
         }
@@ -48,4 +48,6 @@ void loadFromCSV (const std::string& filename)
             
         std::cout << std::endl;
     }
+
+    
 }
