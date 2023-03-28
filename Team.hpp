@@ -9,14 +9,16 @@
 class Team
 {
     public:
-        void
-        getTeamVec ();
+        Team ();
+
+        std::vector< std::vector<std::string>>
+        getTeamMatrix ();
 
         void
-        setTeamVec ();
+        setTeamMatrix (const std::string& filename);
 
     private:
-
+        std::vector< std::vector<std::string>> t_matrix;
 };
 
 #endif
