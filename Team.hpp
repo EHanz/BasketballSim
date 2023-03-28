@@ -10,15 +10,19 @@ class Team
 {
     public:
         Team ();
+        ~Team ();
 
-        std::vector< std::vector<std::string>>
+        std::vector <std::string>
+        getPlayer (std::string playerName);
+
+        std::vector< std::vector <std::string>>
         getTeamMatrix ();
 
         void
         setTeamMatrix (const std::string& filename);
 
     private:
-        std::vector< std::vector<std::string>> t_matrix;
+        std::vector< std::vector <std::string>> t_matrix;
 };
 
 #endif

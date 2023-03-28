@@ -1,7 +1,14 @@
 #include "Team.hpp"
+#include <string>
 
 // Constructor for the Team Class
 Team :: Team ()
+{
+
+}
+
+std::vector <std::string>
+Team :: getPlayer (std::string playerName)
 {
 
 }
@@ -20,11 +27,11 @@ Team :: setTeamMatrix (const std::string& filename)
     std::ifstream data (filename);
     std::string line;
 
-    while(std::getline (data,line))
+    while (std::getline (data,line))
     {
         std::stringstream lineStream (line);
         std::string cell;
-        std::vector<std::string> parsedRow;
+        std::vector <std::string> parsedRow;
         while(std::getline (lineStream,cell,','))
         {
             parsedRow.push_back (cell);
@@ -42,5 +49,9 @@ Team :: setTeamMatrix (const std::string& filename)
             
         std::cout << std::endl;
     }
+
+    std::cout << t_matrix [2][1] << std::endl;
+    std::cout << t_matrix [3][1] << std::endl;
+    std::cout << t_matrix [6][1] << std::endl;
 
 }
