@@ -57,9 +57,11 @@ void loadFromCSV (const std::string& filename)
 std::vector<int> extract_column(const std::vector<std::vector<int> >& matrix, int col_idx) 
 {
     std::vector<int> result;
+
     for(const auto& row : matrix) 
     {
         result.push_back(row[col_idx]);
     }
+    
     return result;
  }
