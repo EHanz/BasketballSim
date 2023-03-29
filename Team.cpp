@@ -1,4 +1,5 @@
 #include "Team.hpp"
+#include <sstream>
 #include <string>
 
 // Constructor for the Team Class
@@ -31,23 +32,11 @@ Team :: getPlayer (std::string playerName)
     return p_vector;
 }
 
-std::vector <std::vector <int>>
-Team :: getTeamIntMatrix ()
-{
-    return t_int_matrix;
-}
-
 // Gets the vector of the team and their stats
 std::vector< std::vector<std::string>>
 Team :: getTeamStringMatrix ()
 {
     return t_str_matrix;
-}
-
-void
-Team :: setTeamIntMatrix ()
-{
-    
 }
 
 // Sets the vector of the team and their stats
