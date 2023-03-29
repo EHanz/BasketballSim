@@ -14,33 +14,45 @@ Team :: getPlayer (std::string playerName)
     int p_iterator = 0;
     std::vector <std::string> p_vector;
 
-    for (int i = 0; i < t_matrix.size (); i++)
+    for (int i = 0; i < t_str_matrix.size (); i++)
     {
-        if (t_matrix[i][1] == playerName)
+        if (t_str_matrix[i][1] == playerName)
         {
             p_iterator = i;
             break;
         }
     }
 
-    for (int j = 0; j < t_matrix[p_iterator].size (); j++)
+    for (int j = 0; j < t_str_matrix[p_iterator].size (); j++)
     {
-        p_vector.push_back (t_matrix[p_iterator][j]);
+        p_vector.push_back (t_str_matrix[p_iterator][j]);
     }
 
     return p_vector;
 }
 
+std::vector <std::vector <int>>
+Team :: getTeamIntMatrix ()
+{
+    return t_int_matrix;
+}
+
 // Gets the vector of the team and their stats
 std::vector< std::vector<std::string>>
-Team :: getTeamMatrix ()
+Team :: getTeamStringMatrix ()
 {
-    return t_matrix;
+    return t_str_matrix;
+}
+
+void
+Team :: setTeamIntMatrix ()
+{
+    
 }
 
 // Sets the vector of the team and their stats
 void
-Team :: setTeamMatrix (const std::string& filename)
+Team :: setTeamStringMatrix (const std::string& filename)
 {
     std::ifstream data (filename);
     std::string line;
@@ -55,21 +67,21 @@ Team :: setTeamMatrix (const std::string& filename)
             parsedRow.push_back (cell);
         }
 
-        t_matrix.push_back (parsedRow);
+        t_str_matrix.push_back (parsedRow);
     }
 
-    for (int i = 0; i < int (t_matrix.size ()); i++)
+    for (int i = 0; i < int (t_str_matrix.size ()); i++)
     {
-        for (int j = 0; j < int (t_matrix[i].size ()); j++)
+        for (int j = 0; j < int (t_str_matrix[i].size ()); j++)
         {
-            std::cout << t_matrix [i][j] << " ";
+            std::cout << t_str_matrix [i][j] << " ";
         }
             
         std::cout << std::endl;
     }
 
-    std::cout << t_matrix [2][1] << std::endl;
-    std::cout << t_matrix [3][1] << std::endl;
-    std::cout << t_matrix [6][1] << std::endl;
+    std::cout << t_str_matrix [2][1] << std::endl;
+    std::cout << t_str_matrix [3][1] << std::endl;
+    std::cout << t_str_matrix [6][1] << std::endl;
 
 }
