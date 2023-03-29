@@ -22,9 +22,6 @@ class Team
         getTeamStringMatrix ();
 
         void
-        setPlayerStats ();
-
-        void
         setTeamStringMatrix (const std::string& filename);
 
     private:

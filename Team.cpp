@@ -15,6 +15,8 @@ Team :: getPlayer (std::string playerName)
     int p_iterator = 0;
     std::vector <std::string> p_vector;
 
+    std::cout << "Player Name is: " << playerName << std::endl;
+
     for (int i = 0; i < t_str_matrix.size (); i++)
     {
         if (t_str_matrix[i][1] == playerName)
@@ -38,7 +40,7 @@ Team :: getPlayerStats (std::string playerName)
     std::vector <std::string> playerString;
     std::vector <float> playerStats;
 
-    playerString = getPlayer(playerName);
+    playerString = getPlayer (playerName);
 
     // Start i at index 2 for now because first two are not stats
     for (int i = 2; i < playerString.size (); i++)
@@ -77,15 +79,15 @@ Team :: setTeamStringMatrix (const std::string& filename)
         t_str_matrix.push_back (parsedRow);
     }
 
-    for (int i = 0; i < int (t_str_matrix.size ()); i++)
-    {
-        for (int j = 0; j < int (t_str_matrix[i].size ()); j++)
-        {
-            std::cout << t_str_matrix [i][j] << " ";
-        }
+    // for (int i = 0; i < int (t_str_matrix.size ()); i++)
+    // {
+    //     for (int j = 0; j < int (t_str_matrix[i].size ()); j++)
+    //     {
+    //         std::cout << t_str_matrix [i][j] << " ";
+    //     }
             
-        std::cout << std::endl;
-    }
+    //     std::cout << std::endl;
+    // }
 
     std::cout << t_str_matrix [2][1] << std::endl;
     std::cout << t_str_matrix [3][1] << std::endl;
