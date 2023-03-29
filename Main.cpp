@@ -6,16 +6,50 @@
 #include "Player.hpp"
 #include "Team.hpp"
 
+Player* s_player;
 Team* s_team;
+
+void
+testPlayerClass ();
+
+void
+testTeamClass ();
 
 int main ()
 {
+    testTeamClass ();
+
+    testPlayerClass ();
+}
+
+void
+testPlayerClass ()
+{
+    s_player = new Player ();
+    std::vector <float> player_test;
+    std::string playerName = "Joel Embiid";
+    
+    s_player -> setPlayerStats (s_team, playerName);
+
+    player_test = s_player -> getPlayerStats ();
+
+    for (int i = 0; i < player_test.size (); i++)
+    {
+        std::cout << player_test[i] << " ";
+    }
+
+    std::cout << std::endl;
+    
+}
+
+void
+testTeamClass ()
+{
+    s_team = new Team ();
     std::string csv_file = "Test.csv";
     std::vector <std::string> p_vector;
 
     // Tests team info was retrieved
-    s_team = new Team ();
-
     s_team -> setTeamStringMatrix (csv_file);
 
     // Checks player info was gathered correctly
@@ -37,5 +71,4 @@ int main ()
     }
 
     std::cout << std::endl;
-
 }
