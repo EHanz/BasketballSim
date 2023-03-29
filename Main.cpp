@@ -15,7 +15,7 @@ int main ()
 
     s_team = new Team ();
 
-    s_team -> setTeamMatrix (csv_file);
+    s_team -> setTeamStringMatrix (csv_file);
 
     p_vector = s_team -> getPlayer ("James Harden");
 
