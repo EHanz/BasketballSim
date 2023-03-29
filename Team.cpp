@@ -32,6 +32,24 @@ Team :: getPlayer (std::string playerName)
     return p_vector;
 }
 
+std::vector <float>
+Team :: getPlayerStats (std::string playerName)
+{
+    std::vector <std::string> playerString;
+    std::vector <float> playerStats;
+
+    playerString = getPlayer(playerName);
+
+    // Start i at index 2 for now because first two are not stats
+    for (int i = 2; i < playerString.size (); i++)
+    {
+        float temp = std::stof (playerString[i]);
+        playerStats.push_back (temp);
+    }
+
+    return playerStats;
+}
+
 // Gets the vector of the team and their stats
 std::vector< std::vector<std::string>>
 Team :: getTeamStringMatrix ()
