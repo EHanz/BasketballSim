@@ -20,6 +20,11 @@ class Player
 
     private:
         std::vector <float> p_stats;
+        int age, games, gameStarts;
+        float minutesPlayed, fieldGoalsMade, fieldGoalAttempts, fieldGoalPct,
+        threePtMade, threePtAttempts, threePtPct, twoPtMade, twoPtAttempts, twoPtPct,
+        estFgPct, freeThrowsMade, freeThrowAttempts, freeThrowPct, offReb,
+        defReb, totalReb, assists, steals, blocks, turnovers, personalFouls, ppg;
 
 };
 
