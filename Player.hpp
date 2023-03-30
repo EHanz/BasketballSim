@@ -21,6 +21,9 @@ class Player
         void
         setPlayerStats (Team* t_ptr, std::string playerName);
 
+        void
+        testIndividualStats ();
+
     private:
         std::vector <float> p_stats;
         int age, games, gameStarts;

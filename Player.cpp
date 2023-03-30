@@ -26,23 +26,32 @@ Player :: setIndividualStats ()
     threePtPct = p_stats[9];
     twoPtMade = p_stats[10];
     twoPtAttempts = p_stats[11];
-    estFgPct = p_stats[12];
-    freeThrowsMade = p_stats[13];
-    freeThrowAttempts = p_stats[14];
-    freeThrowPct = p_stats[15];
-    offReb = p_stats[16];
-    defReb = p_stats[17];
-    totalReb = p_stats[18];
-    assists = p_stats[19];
-    steals = p_stats[20];
-    blocks = p_stats[21];
-    turnovers = p_stats[22];
-    personalFouls = p_stats[23];
-    ppg = p_stats[24];
+    twoPtPct = p_stats[12];
+    estFgPct = p_stats[13];
+    freeThrowsMade = p_stats[14];
+    freeThrowAttempts = p_stats[15];
+    freeThrowPct = p_stats[16];
+    offReb = p_stats[17];
+    defReb = p_stats[18];
+    totalReb = p_stats[19];
+    assists = p_stats[20];
+    steals = p_stats[21];
+    blocks = p_stats[22];
+    turnovers = p_stats[23];
+    personalFouls = p_stats[24];
+    ppg = p_stats[25];
 }
 
 void
 Player :: setPlayerStats (Team* t_ptr, std::string playerName)
 {
     p_stats = t_ptr -> getPlayerStats (playerName);
+}
+
+void
+Player :: testIndividualStats ()
+{
+    std::cout << "Embiid's Age: " << age << std::endl;
+    std::cout << "Embiid's PPG: " << ppg << std::endl;
+    std::cout << "Embiid's Block Count: " << blocks << std::endl;
 }
