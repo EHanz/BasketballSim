@@ -41,6 +41,8 @@ testPlayerClass ()
     std::cout << std::endl;
 
     s_player -> setIndividualStats ();
+
+    s_player -> testIndividualStats ();
     
 }
 
