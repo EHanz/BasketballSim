@@ -16,6 +16,9 @@ class Player
         getPlayerStats ();
 
         void
+        setIndividualStats ();
+
+        void
         setPlayerStats (Team* t_ptr, std::string playerName);
 
     private:
