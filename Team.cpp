@@ -34,6 +34,8 @@ Team :: getPlayer (std::string playerName)
     return p_vector;
 }
 
+// Gets the stats of a player based off name provided
+// TODO: possibly move the function to player or elsewhere
 std::vector <float>
 Team :: getPlayerStats (std::string playerName)
 {
