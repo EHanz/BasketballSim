@@ -39,6 +39,8 @@ testPlayerClass ()
     }
 
     std::cout << std::endl;
+
+    s_player -> setIndividualStats ();
     
 }
 
