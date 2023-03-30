@@ -17,11 +17,15 @@ testTeamClass ();
 
 int main ()
 {
+    // TODO: Create function to get a file name from the user
+    // and load a csv from a directory
+
     testTeamClass ();
 
     testPlayerClass ();
 }
 
+// Tests the functions of the Player Class
 void
 testPlayerClass ()
 {
@@ -46,6 +50,7 @@ testPlayerClass ()
     
 }
 
+// Tests the functions of the Team Class
 void
 testTeamClass ()
 {
