@@ -5,12 +5,17 @@ Player :: Player ()
     
 }
 
+// Returns the array of player stats
 std::vector <float>
 Player :: getPlayerStats ()
 {
     return p_stats;
 }
 
+// Sets the individual stats of each variable provided from a team csv
+// TODO: Find a better way to do this
+// NOTE: There are player game logs for each season
+// NOTE: There are also logs for a player's career
 void
 Player :: setIndividualStats ()
 {
@@ -42,12 +47,14 @@ Player :: setIndividualStats ()
     ppg = p_stats[25];
 }
 
+// Assigns player stats via a pointer to the team's stat matrix
 void
 Player :: setPlayerStats (Team* t_ptr, std::string playerName)
 {
     p_stats = t_ptr -> getPlayerStats (playerName);
 }
 
+// Tests for player stats
 void
 Player :: testIndividualStats ()
 {
