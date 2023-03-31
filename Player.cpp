@@ -19,46 +19,92 @@ Player :: getPlayerStats ()
 void
 Player :: setIndividualStats ()
 {
-    age = p_stats[0];
-    games = p_stats[1];
-    gameStarts = p_stats[2];
-    minutesPlayed = p_stats[3];
-    fieldGoalsMade = p_stats[4];
-    fieldGoalAttempts = p_stats[5];
-    fieldGoalPct = p_stats[6];
-    threePtMade = p_stats[7];
-    threePtAttempts = p_stats[8];
-    threePtPct = p_stats[9];
-    twoPtMade = p_stats[10];
-    twoPtAttempts = p_stats[11];
-    twoPtPct = p_stats[12];
-    estFgPct = p_stats[13];
-    freeThrowsMade = p_stats[14];
-    freeThrowAttempts = p_stats[15];
-    freeThrowPct = p_stats[16];
-    offReb = p_stats[17];
-    defReb = p_stats[18];
-    totalReb = p_stats[19];
-    assists = p_stats[20];
-    steals = p_stats[21];
-    blocks = p_stats[22];
-    turnovers = p_stats[23];
-    personalFouls = p_stats[24];
-    ppg = p_stats[25];
+    games = p_stats[0];
+    gameStarts = p_stats[1];
+    minutesPlayed = p_stats[2];
+    fieldGoalsMade = p_stats[3];
+    fieldGoalAttempts = p_stats[4];
+    fieldGoalPct = p_stats[5];
+    threePtMade = p_stats[6];
+    threePtAttempts = p_stats[7];
+    threePtPct = p_stats[8];
+    twoPtMade = p_stats[9];
+    twoPtAttempts = p_stats[10];
+    twoPtPct = p_stats[11];
+    estFgPct = p_stats[12];
+    freeThrowsMade = p_stats[13];
+    freeThrowAttempts = p_stats[14];
+    freeThrowPct = p_stats[15];
+    offReb = p_stats[16];
+    defReb = p_stats[17];
+    totalReb = p_stats[18];
+    assists = p_stats[19];
+    steals = p_stats[20];
+    blocks = p_stats[21];
+    turnovers = p_stats[22];
+    personalFouls = p_stats[23];
+    ppg = p_stats[24];
 }
 
 // Assigns player stats via a pointer to the team's stat matrix
 void
 Player :: setPlayerStats (Team* t_ptr, std::string playerName)
 {
-    p_stats = t_ptr -> getPlayerStats (playerName);
+    p_stats.clear ();
+
+    p_stats = t_ptr -> getPlayerFromTeamStats (playerName);
+}
+
+// Provides a player vector from the league matrix
+// Sets player class stats based off the provided vector
+void
+Player :: setStatsFromLeagueMatrix (std::vector<std::string> playerVector)
+{
+    // Empty the player vector
+    p_stats.clear ();
+
+    // Assigns the incoming values to the local p_stats
+    for (int i = 5; i < playerVector.size () - 1; i++)
+    {
+        float temp = std::stof (playerVector[i]);
+        p_stats.push_back (temp);
+    }
+
+    // Assign the values from p_stats to the 
+    // individual player values
+    setIndividualStats ();
 }
 
 // Tests for player stats
 void
 Player :: testIndividualStats ()
 {
-    std::cout << "Embiid's Age: " << age << std::endl;
-    std::cout << "Embiid's PPG: " << ppg << std::endl;
-    std::cout << "Embiid's Block Count: " << blocks << std::endl;
+    // Output the player's stat line
+    std :: cout << "Please note these statistics are PER GAME (excluding Games and Minutes): " << std::endl;
+    std :: cout << std::endl << std::endl;
+    std :: cout << "Player's Games Played: " << games << std::endl;
+    std :: cout << "Player's Games Started: " << gameStarts << std::endl;
+    std :: cout << "Player's Minutes Played: " << minutesPlayed << std::endl;
+    std :: cout << "Player's Field Goals Made: " << fieldGoalsMade << std::endl;
+    std :: cout << "Player's Field Goal Attempts: " << fieldGoalAttempts << std::endl;
+    std :: cout << "Player's Field Goal Percentage: " << fieldGoalPct << std::endl;
+    std :: cout << "Player's Three Pointers Made: " << threePtMade << std::endl;
+    std :: cout << "Player's Three Pointers Attempted: " << threePtAttempts << std::endl;
+    std :: cout << "Player's Three Point Percentage: " << threePtPct << std::endl;
+    std :: cout << "Player's Two Pointers Made: " << twoPtMade << std::endl;
+    std :: cout << "Player's Two Pointers Attempted: " << twoPtAttempts << std::endl;
+    std :: cout << "Player's Two Point Percentage: " << twoPtPct << std::endl;
+    std :: cout << "Player's Estimated Field Goal Percentage: " << estFgPct << std::endl;
+    std :: cout << "Player's Free Throws Made: " << freeThrowsMade << std::endl;
+    std :: cout << "Player's Free Throws Attempted: " << freeThrowAttempts << std::endl;
+    std :: cout << "Player's Free Throw Percentage: " << freeThrowPct << std::endl;
+    std :: cout << "Player's Offensive Rebounds: " << offReb << std::endl;
+    std :: cout << "Player's Defensive Rebounds: " << defReb << std::endl;
+    std :: cout << "Player's Total Rebounds: " << totalReb << std::endl;
+    std :: cout << "Player's Assists: " << assists << std::endl;
+    std :: cout << "Player's Steals: " << steals << std::endl;
+    std :: cout << "Player's Blocks: " << blocks << std::endl;
+    std :: cout << "Player's Turnovers: " << turnovers << std::endl;
+    std :: cout << "Player's Personal Fouls: " << personalFouls << std::endl;
+    std :: cout << "Player's Points Per Game: " << ppg << std::endl;
 }
