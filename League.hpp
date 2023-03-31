@@ -21,6 +21,7 @@ class League
         setLeagueMatrix (const std::string& filename);
 
     private:
+        // Might want to switch to a different data type
         std::vector <std::vector <std::string>> league_matrix;
 };
 
