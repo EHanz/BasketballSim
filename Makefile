@@ -33,7 +33,7 @@ LDPATHS :=
 LDLIBS := 
 
 # All source files, separated by spaces. Don't include header files. 
-SRCS := Main.cpp Player.cpp Team.cpp League.cpp
+SRCS := Main.cpp ComparePlayer.cpp League.cpp Player.cpp Team.cpp
 
 # Extension for source files. Do NOT modify.
 SOURCESUFFIX := cpp
