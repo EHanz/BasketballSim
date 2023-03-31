@@ -3,7 +3,7 @@
 // Standard Constructor
 League :: League ()
 {
-
+    // Might move setLeagueMatrix function call here
 }
 
 // Returns the matrix of all players in the league
