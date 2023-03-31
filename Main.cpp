@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <string>
 #include <vector>
 #include <sstream>
 
@@ -13,8 +14,16 @@ Player* s_player_one;
 Player* s_player_two;
 Team* s_team;
 
+std::string playerOneName;
+std::string playerTwoName;
+std::vector <std::string> player_one_vec;
+std::vector <std::string> player_two_vec;
+
 void
 init ();
+
+void
+printMenuText ();
 
 void
 testLeagueClass ();
@@ -26,7 +35,7 @@ void
 testTeamClass ();
 
 void
-testUserInput ();
+testUserInput (int);
 
 int main ()
 {
@@ -43,7 +52,7 @@ int main ()
 
     testLeagueClass ();
 
-    testUserInput ();
+    printMenuText ();
 }
 
 // Init those lousy pointers
@@ -55,8 +64,23 @@ init ()
     s_player_two = new Player ();
     s_team = new Team ();
 
+    std::cout << "Welcome to the Basketball Simulator!" << "\n";
+
     // Boots up the matrix of all players in the league
     s_league -> setLeagueMatrix("League.csv");
+}
+
+void
+printMenuText ()
+{
+    int option = 0;
+    std::cout << "Would you like to: " << "\n";
+    std::cout << "1. Load Player 1 for Sim" << "\n";
+    std::cout << "2. Load Player 2 for Sim" << "\n";
+    std::cout << "3. Quit" << "\n";
+
+    std::cin >> option;
+    testUserInput (option);
 }
 
 // Tests the functions of the League Class
@@ -115,7 +139,34 @@ testTeamClass ()
 // that player and print it out
 // TODO: Make searching for players easier
 void
-testUserInput ()
+testUserInput (int option)
 {
-
+    if (option == 1)
+    {
+        player_one_vec.clear ();
+        std::cout << "What is the name of Player 1?" << "\n";
+        std::cin.ignore ();
+        std::getline (std::cin, playerOneName);
+        player_one_vec = s_league -> getPlayerFromLeague (playerOneName);
+        testPlayerClass (s_player_one, player_one_vec);
+        printMenuText ();
+    }
+    else if (option == 2)
+    {
+        player_two_vec.clear ();
+        std::cout << "What is the name of Player 2?" << "\n";
+        std::cin.ignore ();
+        std::getline (std::cin, playerTwoName);
+        player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
+        testPlayerClass (s_player_two, player_two_vec);
+        printMenuText ();
+    }
+    else if (option == 3)
+    {
+        exit (0);
+    }
+    else 
+    {
+        std::cout << "That is not a valid option. Please choose again." << "\n";
+    }
 }
