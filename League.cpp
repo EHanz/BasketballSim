@@ -1,16 +1,19 @@
 #include "League.hpp"
 
+// Standard Constructor
 League :: League ()
 {
 
 }
 
+// Returns the matrix of all players in the league
 std::vector <std::vector <std::string>>
 League :: getLeagueMatrix ()
 {
     return league_matrix;
 }
 
+// Takes a player name string and locates a player with that name
 std::vector <std::string>
 League :: getPlayerFromLeague (std::string playerName)
 {
@@ -38,6 +41,8 @@ League :: getPlayerFromLeague (std::string playerName)
     return p_vector;
 }
 
+// Loads the matrix of all players in the NBA
+// Data is extracted from the League.csv
 void
 League :: setLeagueMatrix (const std::string& filename)
 {
