@@ -25,6 +25,9 @@ testPlayerClass (Player*, std::vector <std::string>);
 void
 testTeamClass ();
 
+void
+testUserInput ();
+
 int main ()
 {
     init ();
@@ -39,6 +42,8 @@ int main ()
     // navigate something that large besides vec matrix
 
     testLeagueClass ();
+
+    testUserInput ();
 }
 
 // Init those lousy pointers
@@ -49,6 +54,9 @@ init ()
     s_player_one = new Player ();
     s_player_two = new Player ();
     s_team = new Team ();
+
+    // Boots up the matrix of all players in the league
+    s_league -> setLeagueMatrix("League.csv");
 }
 
 // Tests the functions of the League Class
@@ -62,9 +70,6 @@ testLeagueClass ()
 
     std::vector <std::string> giannis_test;
     std::vector <float> giannis_stats;
-    
-    // Boots up the matrix of all players in the league
-    s_league -> setLeagueMatrix("League.csv");
 
     // Embiid Tests
     embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
@@ -102,6 +107,15 @@ testPlayerClass (Player* player, std::vector <std::string> playerVector)
 // TODO: Rework Team Class
 void
 testTeamClass ()
+{
+
+}
+
+// Ask user for a player name and then extract the stats associated with
+// that player and print it out
+// TODO: Make searching for players easier
+void
+testUserInput ()
 {
 
 }
