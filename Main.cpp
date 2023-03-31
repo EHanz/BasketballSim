@@ -3,12 +3,14 @@
 #include <vector>
 #include <sstream>
 
+#include "ComparePlayer.hpp"
 #include "League.hpp"
 #include "Player.hpp"
 #include "Team.hpp"
 
 League* s_league;
-Player* s_player;
+Player* s_player_one;
+Player* s_player_two;
 Team* s_team;
 
 void
@@ -48,7 +50,8 @@ void
 init ()
 {
     s_league = new League ();
-    s_player = new Player ();
+    s_player_one = new Player ();
+    s_player_two = new Player ();
     s_team = new Team ();
 }
 
@@ -59,22 +62,38 @@ testLeagueClass ()
     std::cout << "Testing League Class..." << "\n";
 
     std::vector <std::string> embiid_test;
+    std::vector <std::string> giannis_test;
     std::vector <float> embiid_stats;
+    std::vector <float> giannis_stats;
 
     // Boots up the matrix of all players in the league
     s_league -> setLeagueMatrix("League.csv");
 
+    // Embiid Tests
     embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
 
     // Sends a vector of a player extracted from the league matrix
     // Assigns variables in player class from the vector sent over
-    s_player -> setStatsFromLeagueMatrix(embiid_test);
+    s_player_one -> setStatsFromLeagueMatrix (embiid_test);
 
     // Ensures the stats were sent over correctly by retrieving
     // The vector of stats for the player
-    embiid_stats = s_player -> getPlayerStats ();
+    embiid_stats = s_player_one -> getPlayerStats ();
 
-    s_player -> testIndividualStats ();
+    s_player_one -> testIndividualStats ();
+    // End Embiid Tests
+
+
+    // Giannis Tests
+    giannis_test = s_league -> getPlayerFromLeague ("Giannis Antetokounmpo");
+
+    s_player_two -> setStatsFromLeagueMatrix (giannis_test);
+
+    giannis_stats = s_player_two -> getPlayerStats ();
+
+    s_player_two -> testIndividualStats ();
+    // End Giannis Tests
+
 }
 
 // Tests the functions of the Player Class
@@ -88,15 +107,15 @@ testPlayerClass ()
     
     // Locates the player and finds the stats belonging to them
     // Prints out the results
-    s_player -> setPlayerStats (s_team, playerName);
+    s_player_one -> setPlayerStats (s_team, playerName);
 
-    player_test = s_player -> getPlayerStats ();
+    player_test = s_player_one -> getPlayerStats ();
 
     std::cout << "\n";
 
-    s_player -> setIndividualStats ();
+    s_player_one -> setIndividualStats ();
 
-    s_player -> testIndividualStats ();
+    s_player_one -> testIndividualStats ();
 
     std::cout << "\n";
     std::cout << "\n";
@@ -128,4 +147,5 @@ testTeamClass ()
     std::cout << "\n";
     std::cout << "\n";
     std::cout << "\n";
+
 }
