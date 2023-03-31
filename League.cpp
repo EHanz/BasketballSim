@@ -14,7 +14,7 @@ League :: getLeagueMatrix ()
 std::vector <std::string>
 League :: getPlayerFromLeague (std::string playerName)
 {
-    std::cout << "Finding Joel Embiid..." << std::endl;
+    std::cout << "Finding " << playerName << "... " << std::endl;
 
     int p_iterator = 0;
     std::vector <std::string> p_vector;
