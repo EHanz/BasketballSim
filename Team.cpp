@@ -37,15 +37,17 @@ Team :: getPlayer (std::string playerName)
 // Gets the stats of a player based off name provided
 // TODO: possibly move the function to player or elsewhere
 std::vector <float>
-Team :: getPlayerStats (std::string playerName)
+Team :: getPlayerFromTeamStats (std::string playerName)
 {
     std::vector <std::string> playerString;
     std::vector <float> playerStats;
 
+    std::cout << "Finding " << playerName << std::endl;
+
     playerString = getPlayer (playerName);
 
     // Start i at index 2 for now because first two are not stats
-    for (int i = 2; i < playerString.size (); i++)
+    for (int i = 3; i < playerString.size (); i++)
     {
         float temp = std::stof (playerString[i]);
         playerStats.push_back (temp);
@@ -55,7 +57,7 @@ Team :: getPlayerStats (std::string playerName)
 }
 
 // Gets the vector of the team and their stats
-std::vector< std::vector<std::string>>
+std::vector <std::vector <std::string>>
 Team :: getTeamStringMatrix ()
 {
     return t_str_matrix;
@@ -67,6 +69,8 @@ Team :: setTeamStringMatrix (const std::string& filename)
 {
     std::ifstream data (filename);
     std::string line;
+
+    std::cout << "Loading Team Matrix..." << std::endl;
 
     while (std::getline (data,line))
     {
@@ -80,19 +84,5 @@ Team :: setTeamStringMatrix (const std::string& filename)
 
         t_str_matrix.push_back (parsedRow);
     }
-
-    // for (int i = 0; i < int (t_str_matrix.size ()); i++)
-    // {
-    //     for (int j = 0; j < int (t_str_matrix[i].size ()); j++)
-    //     {
-    //         std::cout << t_str_matrix [i][j] << " ";
-    //     }
-            
-    //     std::cout << std::endl;
-    // }
-
-    std::cout << t_str_matrix [2][1] << std::endl;
-    std::cout << t_str_matrix [3][1] << std::endl;
-    std::cout << t_str_matrix [6][1] << std::endl;
 
 }

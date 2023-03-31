@@ -22,11 +22,14 @@ class Player
         setPlayerStats (Team* t_ptr, std::string playerName);
 
         void
+        setStatsFromLeagueMatrix (std::vector <std::string> playerVector);
+
+        void
         testIndividualStats ();
 
     private:
         std::vector <float> p_stats;
-        int age, games, gameStarts;
+        int games, gameStarts;
         float minutesPlayed, fieldGoalsMade, fieldGoalAttempts, fieldGoalPct,
         threePtMade, threePtAttempts, threePtPct, twoPtMade, twoPtAttempts, twoPtPct,
         estFgPct, freeThrowsMade, freeThrowAttempts, freeThrowPct, offReb,

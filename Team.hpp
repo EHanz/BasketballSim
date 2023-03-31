@@ -16,7 +16,7 @@ class Team
         getPlayer (std::string playerName);
 
         std::vector <float>
-        getPlayerStats (std::string playerName);
+        getPlayerFromTeamStats (std::string playerName);
 
         std::vector <std::vector <std::string>>
         getTeamStringMatrix ();
