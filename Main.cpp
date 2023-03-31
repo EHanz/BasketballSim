@@ -26,10 +26,10 @@ void
 printMenuText ();
 
 void
-testLeagueClass ();
+setPlayerClass (Player*, std::vector <std::string>);
 
 void
-testPlayerClass (Player*, std::vector <std::string>);
+testLeagueClass ();
 
 void
 testTeamClass ();
@@ -77,7 +77,8 @@ printMenuText ()
     std::cout << "Would you like to: " << "\n";
     std::cout << "1. Load Player 1 for Sim" << "\n";
     std::cout << "2. Load Player 2 for Sim" << "\n";
-    std::cout << "3. Quit" << "\n";
+    std::cout << "3. Compare the two players" << "\n";
+    std::cout << "4. Quit" << "\n";
 
     std::cin >> option;
     testUserInput (option);
@@ -98,7 +99,7 @@ testLeagueClass ()
     // Embiid Tests
     embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
 
-    testPlayerClass (s_player_one, embiid_test);
+    setPlayerClass (s_player_one, embiid_test);
 
     // End Embiid Tests
 
@@ -106,7 +107,7 @@ testLeagueClass ()
     // Giannis Tests
     giannis_test = s_league -> getPlayerFromLeague ("Giannis Antetokounmpo");
 
-    testPlayerClass (s_player_two, giannis_test);
+    setPlayerClass (s_player_two, giannis_test);
 
     // End Giannis Tests
 
@@ -114,7 +115,7 @@ testLeagueClass ()
 
 // Tests the functions of the Player Class
 void
-testPlayerClass (Player* player, std::vector <std::string> playerVector)
+setPlayerClass (Player* player, std::vector <std::string> playerVector)
 {
     // Sends a vector of a player extracted from the league matrix
     // Assigns variables in player class from the vector sent over
@@ -141,27 +142,45 @@ testTeamClass ()
 void
 testUserInput (int option)
 {
+    std::vector <float> test_player;
+
     if (option == 1)
     {
         player_one_vec.clear ();
+
         std::cout << "What is the name of Player 1?" << "\n";
         std::cin.ignore ();
         std::getline (std::cin, playerOneName);
+
         player_one_vec = s_league -> getPlayerFromLeague (playerOneName);
-        testPlayerClass (s_player_one, player_one_vec);
+        setPlayerClass (s_player_one, player_one_vec);
+
+        std::cout << "\n";
+        std::cout << "\n";
+
+        test_player = s_player_one -> getPlayerStats ();
+        std::cout << test_player[2] << "\n";
+
         printMenuText ();
     }
     else if (option == 2)
     {
         player_two_vec.clear ();
+
         std::cout << "What is the name of Player 2?" << "\n";
         std::cin.ignore ();
         std::getline (std::cin, playerTwoName);
+
         player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
-        testPlayerClass (s_player_two, player_two_vec);
+        setPlayerClass (s_player_two, player_two_vec);
         printMenuText ();
     }
     else if (option == 3)
+    {
+        // Compare Player Options
+
+    }
+    else if (option == 4)
     {
         exit (0);
     }
