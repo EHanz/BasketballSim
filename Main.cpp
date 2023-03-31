@@ -20,7 +20,7 @@ void
 testLeagueClass ();
 
 void
-testPlayerClass ();
+testPlayerClass (Player*, std::vector <std::string>);
 
 void
 testTeamClass ();
@@ -37,10 +37,6 @@ int main ()
 
     // TODO: implement league player csv file and find a good way to
     // navigate something that large besides vec matrix
-
-    testTeamClass ();
-
-    testPlayerClass ();
 
     testLeagueClass ();
 }
@@ -62,90 +58,50 @@ testLeagueClass ()
     std::cout << "Testing League Class..." << "\n";
 
     std::vector <std::string> embiid_test;
-    std::vector <std::string> giannis_test;
     std::vector <float> embiid_stats;
-    std::vector <float> giannis_stats;
 
+    std::vector <std::string> giannis_test;
+    std::vector <float> giannis_stats;
+    
     // Boots up the matrix of all players in the league
     s_league -> setLeagueMatrix("League.csv");
 
     // Embiid Tests
     embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
 
-    // Sends a vector of a player extracted from the league matrix
-    // Assigns variables in player class from the vector sent over
-    s_player_one -> setStatsFromLeagueMatrix (embiid_test);
+    testPlayerClass (s_player_one, embiid_test);
 
-    // Ensures the stats were sent over correctly by retrieving
-    // The vector of stats for the player
-    embiid_stats = s_player_one -> getPlayerStats ();
-
-    s_player_one -> testIndividualStats ();
     // End Embiid Tests
 
 
     // Giannis Tests
     giannis_test = s_league -> getPlayerFromLeague ("Giannis Antetokounmpo");
 
-    s_player_two -> setStatsFromLeagueMatrix (giannis_test);
+    testPlayerClass (s_player_two, giannis_test);
 
-    giannis_stats = s_player_two -> getPlayerStats ();
-
-    s_player_two -> testIndividualStats ();
     // End Giannis Tests
 
 }
 
 // Tests the functions of the Player Class
 void
-testPlayerClass ()
+testPlayerClass (Player* player, std::vector <std::string> playerVector)
 {
-    std::cout << "Testing Player Class..." << "\n";
+    // Sends a vector of a player extracted from the league matrix
+    // Assigns variables in player class from the vector sent over
+    player -> setStatsFromLeagueMatrix (playerVector);
 
-    std::vector <float> player_test;
-    std::string playerName = "Tobias Harris";
-    
-    // Locates the player and finds the stats belonging to them
-    // Prints out the results
-    s_player_one -> setPlayerStats (s_team, playerName);
+    // Ensures the stats were sent over correctly by retrieving
+    // The vector of stats for the player
+    player -> getPlayerStats ();
 
-    player_test = s_player_one -> getPlayerStats ();
-
-    std::cout << "\n";
-
-    s_player_one -> setIndividualStats ();
-
-    s_player_one -> testIndividualStats ();
-
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
-    
+    player -> testIndividualStats ();
 }
 
 // Tests the functions of the Team Class
+// TODO: Rework Team Class
 void
 testTeamClass ()
 {
-    std::cout << "Testing Team Class..." << std::endl;
-
-    std::string csv_file = "Test.csv";
-    std::vector <std::string> p_vector;
-
-    // Tests team info was retrieved
-    s_team -> setTeamStringMatrix (csv_file);
-    
-    // Checks player stats are converted correctly
-    std::vector <float> harden_stats;
-
-    harden_stats = s_team -> getPlayerFromTeamStats ("James Harden");
-    for (int j = 0; j < harden_stats.size (); j++)
-    {
-        std::cout << harden_stats[j] << " ";
-    }
-
-    std::cout << "\n";
-    std::cout << "\n";
-    std::cout << "\n";
 
 }

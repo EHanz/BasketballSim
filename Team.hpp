@@ -8,27 +8,16 @@
 #include <sstream>
 #include <vector>
 
+// Erased functions to rework class
+// instead will gather csv files for whole team rather
+// than the player roster
+
 class Team
 {
     public:
         Team ();
         ~Team ();
 
-        std::vector <std::string>
-        getPlayer (std::string playerName);
-
-        std::vector <float>
-        getPlayerFromTeamStats (std::string playerName);
-
-        std::vector <std::vector <std::string>>
-        getTeamStringMatrix ();
-
-        void
-        setTeamStringMatrix (const std::string& filename);
-
-    private:
-        // Might want to switch to a different data type
-        std::vector <std::vector <std::string>> t_str_matrix;
 };
 
 #endif
