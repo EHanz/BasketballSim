@@ -12,11 +12,26 @@
 class ComparePlayer
 {
     public:
+        // Make sure to set name in functions
+        // for stat results and comparisons
+        void
+        setPlayerOneStats ();
+
+        void
+        setPlayerTwoStats ();
+
 
     
     private:
         std::vector <float> player_one_stats;
         std::vector <float> player_two_stats;
+
+        std::string playerOneName;
+        std::string playerTwoName;
+
+        // Add the variables for the individual stats for each player
+        // p1 or p2 followed by stat name
+        float p1_minutesPlayed, p2_minutesPlayed;
 };
 
 #endif
