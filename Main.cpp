@@ -56,7 +56,7 @@ init ()
 void
 testLeagueClass ()
 {
-    std::cout << "Testing League Class..." << std::endl;
+    std::cout << "Testing League Class..." << "\n";
 
     std::vector <std::string> embiid_test;
     std::vector <float> embiid_stats;
@@ -81,7 +81,7 @@ testLeagueClass ()
 void
 testPlayerClass ()
 {
-    std::cout << "Testing Player Class..." << std::endl;
+    std::cout << "Testing Player Class..." << "\n";
 
     std::vector <float> player_test;
     std::string playerName = "Tobias Harris";
@@ -92,20 +92,15 @@ testPlayerClass ()
 
     player_test = s_player -> getPlayerStats ();
 
-    // for (int i = 0; i < player_test.size (); i++)
-    // {
-    //     std::cout << player_test[i] << " ";
-    // }
-
-    std::cout << std::endl;
+    std::cout << "\n";
 
     s_player -> setIndividualStats ();
 
     s_player -> testIndividualStats ();
 
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << std::endl;
+    std::cout << "\n";
+    std::cout << "\n";
+    std::cout << "\n";
     
 }
 
@@ -130,7 +125,7 @@ testTeamClass ()
         std::cout << harden_stats[j] << " ";
     }
 
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << std::endl;
+    std::cout << "\n";
+    std::cout << "\n";
+    std::cout << "\n";
 }
