@@ -1,8 +1,10 @@
 #ifndef TEAM_HPP
 #define TEAM_HPP
 
+#include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <iterator>
 #include <sstream>
 #include <vector>
 
@@ -25,6 +27,7 @@ class Team
         setTeamStringMatrix (const std::string& filename);
 
     private:
+        // Might want to switch to a different data type
         std::vector <std::vector <std::string>> t_str_matrix;
 };
 

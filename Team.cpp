@@ -12,23 +12,26 @@ Team :: Team ()
 std::vector <std::string>
 Team :: getPlayer (std::string playerName)
 {
-    int p_iterator = 0;
+    int p_index = 0;
     std::vector <std::string> p_vector;
 
-    std::cout << "Player Name is: " << playerName << std::endl;
+    std::cout << "Player Name is: " << playerName << "\n";
 
-    for (int i = 0; i < t_str_matrix.size (); i++)
+    // Col is just the value of one since that is where the names are stored
+    for (int row = 0; row < t_str_matrix.size (); row++)
     {
-        if (t_str_matrix[i][1] == playerName)
+        if (t_str_matrix[row][1] == playerName)
         {
-            p_iterator = i;
+            p_index = row;
             break;
         }
     }
 
-    for (int j = 0; j < t_str_matrix[p_iterator].size (); j++)
+    // Now that we have the row, we just copy over all
+    // the values in each column
+    for (int col = 0; col < t_str_matrix[p_index].size (); col++)
     {
-        p_vector.push_back (t_str_matrix[p_iterator][j]);
+        p_vector.push_back (t_str_matrix[p_index][col]);
     }
 
     return p_vector;
@@ -42,14 +45,14 @@ Team :: getPlayerFromTeamStats (std::string playerName)
     std::vector <std::string> playerString;
     std::vector <float> playerStats;
 
-    std::cout << "Finding " << playerName << std::endl;
+    std::cout << "Finding " << playerName << "\n";
 
     playerString = getPlayer (playerName);
 
-    // Start i at index 2 for now because first two are not stats
-    for (int i = 3; i < playerString.size (); i++)
+    // Start col at index 2 for now because first two columns are not stats
+    for (int col = 3; col < playerString.size (); col++)
     {
-        float temp = std::stof (playerString[i]);
+        float temp = std::stof (playerString[col]);
         playerStats.push_back (temp);
     }
 
@@ -70,7 +73,7 @@ Team :: setTeamStringMatrix (const std::string& filename)
     std::ifstream data (filename);
     std::string line;
 
-    std::cout << "Loading Team Matrix..." << std::endl;
+    std::cout << "Loading Team Matrix..." << "\n";
 
     while (std::getline (data,line))
     {
