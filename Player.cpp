@@ -46,15 +46,6 @@ Player :: setIndividualStats ()
     ppg = p_stats[24];
 }
 
-// Assigns player stats via a pointer to the team's stat matrix
-void
-Player :: setPlayerStats (Team* t_ptr, std::string playerName)
-{
-    p_stats.clear ();
-
-    p_stats = t_ptr -> getPlayerFromTeamStats (playerName);
-}
-
 // Provides a player vector from the league matrix
 // Sets player class stats based off the provided vector
 void

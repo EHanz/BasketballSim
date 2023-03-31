@@ -19,9 +19,6 @@ class Player
         setIndividualStats ();
 
         void
-        setPlayerStats (Team* t_ptr, std::string playerName);
-
-        void
         setStatsFromLeagueMatrix (std::vector <std::string> playerVector);
 
         void
