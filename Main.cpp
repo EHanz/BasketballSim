@@ -39,10 +39,12 @@ testUserInput (int);
 
 int main ()
 {
+    // Initialize the classes needed and load the league csv file
     init ();
 
     // TODO: Create function to get a file name from the user
     // and load a csv from a directory
+    // Make a specific directory for the csv files
 
     // TODO: Find where the csv files are for individual teams
     // and the player stats per game
@@ -70,6 +72,7 @@ init ()
     s_league -> setLeagueMatrix("League.csv");
 }
 
+// Prints the output and menu options for the user
 void
 printMenuText ()
 {
