@@ -1,5 +1,6 @@
 #include "Player.hpp"
 
+// Standard constructor
 Player :: Player ()
 {
     
