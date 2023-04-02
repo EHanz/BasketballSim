@@ -20,9 +20,9 @@ class ComparePlayer
         void
         setPlayerTwoStats ();
 
-
-    
     private:
+        // TODO: Find a better way to store stats than a ton of floats
+        
         std::vector <float> player_one_stats;
         std::vector <float> player_two_stats;
 
