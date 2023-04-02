@@ -10,6 +10,7 @@ class League
 {
     public:
         League ();
+        ~League ();
 
         std::vector <std::vector <std::string>>
         getLeagueMatrix ();
