@@ -1,8 +1,14 @@
+/*
+* Filename: Main.cpp
+* Author: Evan Hanzelman
+* Description: Driver for the Basketball Simulator Project
+*/
+
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <vector>
 #include <sstream>
+#include <vector>
 
 #include "ComparePlayer.hpp"
 #include "League.hpp"
