@@ -1,3 +1,9 @@
+/*
+* Filename: League.cpp
+* Author: Evan Hanzelman
+* Description: The League Class
+*/
+
 #include "League.hpp"
 
 // Standard Constructor
