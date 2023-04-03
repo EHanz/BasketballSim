@@ -1,3 +1,9 @@
+/*
+* Filename: ComparePlayer.hpp
+* Author: Evan Hanzelman
+* Description: Header file for the Compare Player Class
+*/
+
 // Be able to take two player classes
 // Get the stats of each player
 // Assign the stats to individual vars for each player
