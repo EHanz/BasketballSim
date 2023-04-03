@@ -1,3 +1,9 @@
+/*
+* Filename: Team.hpp
+* Author: Evan Hanzelman
+* Description: Header file for the Team Class
+*/
+
 #ifndef TEAM_HPP
 #define TEAM_HPP
 
