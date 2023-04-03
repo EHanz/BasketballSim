@@ -1,3 +1,9 @@
+/*
+* Filename: Player.hpp
+* Author: Evan Hanzelman
+* Description: Header file for the Player Class
+*/
+
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
