@@ -1,3 +1,9 @@
+/*
+* Filename: Player.cpp
+* Author: Evan Hanzelman
+* Description: The Player Class
+*/
+
 #include "Player.hpp"
 
 // Standard constructor
