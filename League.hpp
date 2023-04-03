@@ -1,3 +1,9 @@
+/*
+* Filename: League.hpp
+* Author: Evan Hanzelman
+* Description: Header file for the League Class
+*/
+
 #ifndef LEAGUE_HPP
 #define LEAGUE_HPP
 
