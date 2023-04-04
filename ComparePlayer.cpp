@@ -16,25 +16,53 @@ ComparePlayer :: ComparePlayer ()
 int
 ComparePlayer :: comparePlayerBlocks ()
 {
-    
+    if (player_one_stats[21] > player_two_stats[21])
+    {
+        return 1;
+    }
+    else 
+    {
+        return 2;
+    }
 }
 
 int
 ComparePlayer :: comparePlayerPPG ()
 {
-
+    if (player_one_stats[24] > player_two_stats[24])
+    {
+        return 1;
+    }
+    else 
+    {
+        return 2;
+    }
 }
 
 int
 ComparePlayer :: comparePlayerRebounds ()
 {
-
+    if (player_one_stats[18] > player_two_stats[18])
+    {
+        return 1;
+    }
+    else 
+    {
+        return 2;
+    }
 }
 
 int
 ComparePlayer :: comparePlayerSteals ()
 {
-
+    if (player_one_stats[20] > player_two_stats[20])
+    {
+        return 1;
+    }
+    else 
+    {
+        return 2;
+    }
 }
 
 // Sets the stats of Player One only
