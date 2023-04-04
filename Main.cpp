@@ -4,6 +4,8 @@
 * Description: Driver for the Basketball Simulator Project
 */
 
+/***************************************************************/
+// Included libraries and classes
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -15,6 +17,9 @@
 #include "Player.hpp"
 #include "Team.hpp"
 
+/***************************************************************/
+// Class Pointers and other vars
+ComparePlayer* s_compare_player;
 League* s_league;
 Player* s_player_one;
 Player* s_player_two;
@@ -25,6 +30,8 @@ std::string playerTwoName;
 std::vector <std::string> player_one_vec;
 std::vector <std::string> player_two_vec;
 
+/***************************************************************/
+// Function Declarations
 void
 init ();
 
@@ -43,6 +50,7 @@ testTeamClass ();
 void
 testUserInput (int);
 
+/***************************************************************/
 int main ()
 {
     // Initialize the classes needed and load the league csv file
@@ -67,6 +75,7 @@ int main ()
 void
 init ()
 {
+    s_compare_player = new ComparePlayer ();
     s_league = new League ();
     s_player_one = new Player ();
     s_player_two = new Player ();
@@ -142,7 +151,7 @@ setPlayerClass (Player* player, std::vector <std::string> playerVector)
 void
 testTeamClass ()
 {
-
+    std::cout << "Testing Team Class" << "\n";
 }
 
 // Ask user for a player name and then extract the stats associated with
@@ -169,8 +178,6 @@ testUserInput (int option)
 
         test_player = s_player_one -> getPlayerStats ();
         std::cout << test_player[2] << "\n";
-
-        printMenuText ();
     }
     else if (option == 2)
     {
@@ -182,12 +189,12 @@ testUserInput (int option)
 
         player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
         setPlayerClass (s_player_two, player_two_vec);
-        printMenuText ();
     }
     else if (option == 3)
     {
+        std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
         // Compare Player Options
-
+        s_compare_player -> setPlayerStats (s_player_one, s_player_two);
     }
     else if (option == 4)
     {
@@ -197,4 +204,5 @@ testUserInput (int option)
     {
         std::cout << "That is not a valid option. Please choose again." << "\n";
     }
+    printMenuText ();
 }
