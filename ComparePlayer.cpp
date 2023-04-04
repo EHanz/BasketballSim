@@ -13,6 +13,7 @@ ComparePlayer :: ComparePlayer ()
 
 }
 
+// TODO: All below functions, find a better way to compare Players
 int
 ComparePlayer :: comparePlayerBlocks ()
 {
@@ -65,17 +66,31 @@ ComparePlayer :: comparePlayerSteals ()
     }
 }
 
+int
+ComparePlayer :: playerHeadToHead ()
+{
+    int pOneTotal = 0;
+    int pTwoTotal = 0;
+    if (comparePlayerBlocks () == 1) {pOneTotal++;} else {pTwoTotal++;}
+    if (comparePlayerPPG () == 1) {pOneTotal++;} else {pTwoTotal++;}
+    if (comparePlayerRebounds () == 1) {pOneTotal++;} else {pTwoTotal++;}
+    if (comparePlayerSteals () == 1) {pOneTotal++;} else {pTwoTotal++;}
+    if (pOneTotal > pTwoTotal) {return 1;} else if (pTwoTotal > pOneTotal) {return 2;} else {return 0;}
+}
+
 // Sets the stats of Player One only
 void
-ComparePlayer :: setPlayerOneStats (Player* p1)
+ComparePlayer :: setPlayerOneStats (Player* p1, std::string playerOneName)
 {
+    player_one_name = playerOneName;
     player_one_stats = p1 -> getPlayerStats ();
 }
 
 // Sets the stats of Player Two only
 void
-ComparePlayer :: setPlayerTwoStats (Player* p2)
+ComparePlayer :: setPlayerTwoStats (Player* p2, std::string playerTwoName)
 {
+    player_two_name = playerTwoName;
     player_two_stats = p2 -> getPlayerStats ();
 }
 
@@ -84,7 +99,7 @@ ComparePlayer :: setPlayerTwoStats (Player* p2)
 // TODO: Look into whether to use pointers or references for p1 & p2
 // TODO: Get player's names assigned in Player Class
 void
-ComparePlayer :: setPlayerStats (Player* p1, Player* p2)
+ComparePlayer :: setPlayerStats (Player* p1, Player* p2, std::string playerOneName, std::string playerTwoName)
 {
     player_one_stats = p1 -> getPlayerStats ();
     player_two_stats = p2 -> getPlayerStats (); 
