@@ -15,16 +15,24 @@
 #include <iostream>
 #include <vector>
 
+#include "Player.hpp"
+
 class ComparePlayer
 {
     public:
+        ComparePlayer ();
+        ~ComparePlayer ();
+
         // Make sure to set name in functions
         // for stat results and comparisons
         void
-        setPlayerOneStats ();
+        setPlayerOneStats (Player* p1);
 
         void
-        setPlayerTwoStats ();
+        setPlayerTwoStats (Player* p2);
+
+        void
+        setPlayerStats (Player* p1, Player* p2);
 
     private:
         // TODO: Find a better way to store stats than a ton of floats
@@ -35,9 +43,8 @@ class ComparePlayer
         std::string playerOneName;
         std::string playerTwoName;
 
-        // Add the variables for the individual stats for each player
-        // p1 or p2 followed by stat name
-        float p1_minutesPlayed, p2_minutesPlayed;
+        // Maybe use private vars eventually in this class
+        // Using globals from Player Class right now
 };
 
 #endif
