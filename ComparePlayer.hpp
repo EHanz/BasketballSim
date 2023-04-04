@@ -26,6 +26,18 @@ class ComparePlayer
         // Make sure to set name in functions
         // for stat results and comparisons
         void
+        comparePlayerBlocks ();
+
+        void
+        comparePlayerPPG ();
+
+        void
+        comparePlayerRebounds ();
+
+        void
+        comparePlayerSteals ();
+
+        void
         setPlayerOneStats (Player* p1);
 
         void
