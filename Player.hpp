@@ -30,15 +30,17 @@ class Player
         void
         testIndividualStats ();
 
-    private:
-        // TODO: find a better way to store all these stats
-        // Too many vars for one class
-        std::vector <float> p_stats;
+        // TODO: ADD PLAYER NAMES
         int games, gameStarts;
         float minutesPlayed, fieldGoalsMade, fieldGoalAttempts, fieldGoalPct,
         threePtMade, threePtAttempts, threePtPct, twoPtMade, twoPtAttempts, twoPtPct,
         estFgPct, freeThrowsMade, freeThrowAttempts, freeThrowPct, offReb,
         defReb, totalReb, assists, steals, blocks, turnovers, personalFouls, ppg;
+
+    private:
+        // TODO: find a better way to store all these stats
+        // Too many vars for one class
+        std::vector <float> p_stats;
 
 };
 
