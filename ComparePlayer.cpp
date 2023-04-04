@@ -13,6 +13,30 @@ ComparePlayer :: ComparePlayer ()
 
 }
 
+int
+ComparePlayer :: comparePlayerBlocks ()
+{
+    
+}
+
+int
+ComparePlayer :: comparePlayerPPG ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerRebounds ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerSteals ()
+{
+
+}
+
 // Sets the stats of Player One only
 void
 ComparePlayer :: setPlayerOneStats (Player* p1)
