@@ -37,14 +37,17 @@ class ComparePlayer
         int
         comparePlayerSteals ();
 
-        void
-        setPlayerOneStats (Player* p1);
+        int
+        playerHeadToHead ();
 
         void
-        setPlayerTwoStats (Player* p2);
+        setPlayerOneStats (Player* p1, std::string playerOneName);
 
         void
-        setPlayerStats (Player* p1, Player* p2);
+        setPlayerTwoStats (Player* p2, std::string playerTwoName);
+
+        void
+        setPlayerStats (Player* p1, Player* p2, std::string playerOneName, std::string playerTwoName);
 
     private:
         // TODO: Find a better way to store stats than a ton of floats
@@ -52,8 +55,8 @@ class ComparePlayer
         std::vector <float> player_one_stats;
         std::vector <float> player_two_stats;
 
-        std::string playerOneName;
-        std::string playerTwoName;
+        std::string player_one_name;
+        std::string player_two_name;
 
         // Maybe use private vars eventually in this class
         // Using globals from Player Class right now
