@@ -17,14 +17,14 @@ ComparePlayer :: ComparePlayer ()
 void
 ComparePlayer :: setPlayerOneStats (Player* p1)
 {
-
+    player_one_stats = p1 -> getPlayerStats ();
 }
 
 // Sets the stats of Player Two only
 void
 ComparePlayer :: setPlayerTwoStats (Player* p2)
 {
-
+    player_two_stats = p2 -> getPlayerStats ();
 }
 
 // Sets the stats of both players at the same time
