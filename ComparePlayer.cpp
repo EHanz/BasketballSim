@@ -4,8 +4,14 @@
 * Description: The Compare Player Class
 */
 
+/***************************************************************/
+// Libraries and Headers
+
 #include "ComparePlayer.hpp"
 #include "Player.hpp"
+
+/***************************************************************/
+// Class Functions
 
 // Standard Constructor
 ComparePlayer :: ComparePlayer ()
@@ -14,6 +20,8 @@ ComparePlayer :: ComparePlayer ()
 }
 
 // TODO: All below functions, find a better way to compare Players
+// Maybe individual vars for each stat or keep index better rather than
+// hard code the index value into the vector
 int
 ComparePlayer :: comparePlayerBlocks ()
 {
