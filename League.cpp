@@ -14,10 +14,7 @@ League :: League ()
 
 // Returns the matrix of all players in the league
 std::vector <std::vector <std::string>>
-League :: getLeagueMatrix ()
-{
-    return league_matrix;
-}
+League :: getLeagueMatrix () { return league_matrix; }
 
 // Takes a player name string and locates a player with that name
 std::vector <std::string>
