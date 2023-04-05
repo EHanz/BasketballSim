@@ -4,7 +4,13 @@
 * Description: The Player Class
 */
 
+/***************************************************************/
+// Libraries and Headers
+
 #include "Player.hpp"
+
+/***************************************************************/
+// Class Functions
 
 // Standard constructor
 Player :: Player ()
