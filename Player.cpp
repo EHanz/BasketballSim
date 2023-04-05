@@ -14,10 +14,7 @@ Player :: Player ()
 
 // Returns the array of player stats
 std::vector <float>
-Player :: getPlayerStats ()
-{
-    return p_stats;
-}
+Player :: getPlayerStats () { return p_stats; }
 
 // Sets the individual stats of each variable provided from a team csv
 // TODO: Find a better way to do this
