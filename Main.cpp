@@ -36,7 +36,16 @@ void
 init ();
 
 void
+printComparePlayerMenu ();
+
+void
 printMenuText ();
+
+void
+runComparePlayerOptions (int);
+
+void
+runMainMenuOptions (int);
 
 void
 setPlayerClass (Player*, std::vector <std::string>);
@@ -46,9 +55,6 @@ testLeagueClass ();
 
 void
 testTeamClass ();
-
-void
-testUserInput (int);
 
 /***************************************************************/
 int main ()
@@ -68,6 +74,8 @@ int main ()
 
     testLeagueClass ();
 
+    // TODO: Please make a menu file! Very unorganized!
+    // TODO: Also switch from if statement to switch statements!
     printMenuText ();
 }
 
@@ -87,6 +95,26 @@ init ()
     s_league -> setLeagueMatrix("League.csv");
 }
 
+// Prints Compare Player Menu Options
+void
+printComparePlayerMenu ()
+{
+    int option = 0;
+
+    std::cout << "\n";
+    std::cout << playerOneName << " versus " << playerTwoName << "\n";
+    std::cout << "1. Better Stats " << "\n";
+    std::cout << "2. More Blocks " << "\n";
+    std::cout << "3. More PPG " << "\n";
+    std::cout << "4. More Rebounds " << "\n";
+    std::cout << "5. More Steals " << "\n";
+    std::cout << "6. Main Menu " << "\n";
+    std::cout << "7. Exit Simulator " << "\n"; 
+
+    std::cin >> option;
+    runComparePlayerOptions (option);
+}
+
 // Prints the output and menu options for the user
 void
 printMenuText ()
@@ -99,66 +127,62 @@ printMenuText ()
     std::cout << "4. Quit" << "\n";
 
     std::cin >> option;
-    testUserInput (option);
+    runMainMenuOptions (option);
 }
 
-// Tests the functions of the League Class
 void
-testLeagueClass ()
+runComparePlayerOptions (int option)
 {
-    std::cout << "Testing League Class..." << "\n";
+    if (option == 1)
+    {
+        std::cout << "Player stat head to head..." << "\n";
+        int result = s_compare_player -> playerHeadToHead ();
 
-    std::vector <std::string> embiid_test;
-    std::vector <float> embiid_stats;
+        if (result == 1) 
+        {
+            std::cout << playerOneName << " won the matchup!" << "\n";
+        } 
+        else if (result == 2) 
+        {
+            std::cout << playerTwoName << " won the matchup!" << "\n";
+        } 
+        else 
+        {
+            std::cout << "The result was a draw!" << "\n";
+        }
 
-    std::vector <std::string> giannis_test;
-    std::vector <float> giannis_stats;
+    }
+    else if (option == 2)
+    {
 
-    // Embiid Tests
-    embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
+    }
+    else if (option == 3)
+    {
 
-    setPlayerClass (s_player_one, embiid_test);
+    }
+    else if (option == 4)
+    {
 
-    // End Embiid Tests
+    }
+    else if (option == 5)
+    {
 
+    }
+    else if (option == 6)
+    {
 
-    // Giannis Tests
-    giannis_test = s_league -> getPlayerFromLeague ("Giannis Antetokounmpo");
+    }
+    else if (option == 7)
+    {
 
-    setPlayerClass (s_player_two, giannis_test);
-
-    // End Giannis Tests
-
-}
-
-// Tests the functions of the Player Class
-void
-setPlayerClass (Player* player, std::vector <std::string> playerVector)
-{
-    // Sends a vector of a player extracted from the league matrix
-    // Assigns variables in player class from the vector sent over
-    player -> setStatsFromLeagueMatrix (playerVector);
-
-    // Ensures the stats were sent over correctly by retrieving
-    // The vector of stats for the player
-    player -> getPlayerStats ();
-
-    player -> testIndividualStats ();
-}
-
-// Tests the functions of the Team Class
-// TODO: Rework Team Class
-void
-testTeamClass ()
-{
-    std::cout << "Testing Team Class" << "\n";
+    }
 }
 
 // Ask user for a player name and then extract the stats associated with
 // that player and print it out
 // TODO: Make searching for players easier
 void
-testUserInput (int option)
+runMainMenuOptions (int option)
 {
     std::vector <float> test_player;
 
@@ -194,7 +218,11 @@ testUserInput (int option)
     {
         std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
         // Compare Player Options
-        s_compare_player -> setPlayerStats (s_player_one, s_player_two);
+        s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
+
+        // Print the Compare Player Menu Options
+
+        printComparePlayerMenu ();
     }
     else if (option == 4)
     {
@@ -205,4 +233,56 @@ testUserInput (int option)
         std::cout << "That is not a valid option. Please choose again." << "\n";
     }
     printMenuText ();
+}
+
+// Tests the functions of the Player Class
+void
+setPlayerClass (Player* player, std::vector <std::string> playerVector)
+{
+    // Sends a vector of a player extracted from the league matrix
+    // Assigns variables in player class from the vector sent over
+    player -> setStatsFromLeagueMatrix (playerVector);
+
+    // Ensures the stats were sent over correctly by retrieving
+    // The vector of stats for the player
+    player -> getPlayerStats ();
+
+    player -> testIndividualStats ();
+}
+
+// Tests the functions of the League Class
+void
+testLeagueClass ()
+{
+    std::cout << "Testing League Class..." << "\n";
+
+    std::vector <std::string> embiid_test;
+    std::vector <float> embiid_stats;
+
+    std::vector <std::string> giannis_test;
+    std::vector <float> giannis_stats;
+
+    // Embiid Tests
+    embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
+
+    setPlayerClass (s_player_one, embiid_test);
+
+    // End Embiid Tests
+
+
+    // Giannis Tests
+    giannis_test = s_league -> getPlayerFromLeague ("Giannis Antetokounmpo");
+
+    setPlayerClass (s_player_two, giannis_test);
+
+    // End Giannis Tests
+
+}
+
+// Tests the functions of the Team Class
+// TODO: Rework Team Class
+void
+testTeamClass ()
+{
+    std::cout << "Testing Team Class" << "\n";
 }
