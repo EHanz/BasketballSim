@@ -6,6 +6,7 @@
 
 /***************************************************************/
 // Included libraries and classes
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -19,6 +20,7 @@
 
 /***************************************************************/
 // Class Pointers and other vars
+
 ComparePlayer* s_compare_player;
 League* s_league;
 Player* s_player_one;
@@ -32,6 +34,7 @@ std::vector <std::string> player_two_vec;
 
 /***************************************************************/
 // Function Declarations
+
 void
 init ();
 
@@ -60,6 +63,8 @@ void
 testTeamClass ();
 
 /***************************************************************/
+// Driver for Basketball Simulator
+
 int main ()
 {
     // Initialize the classes needed and load the league csv file
@@ -81,6 +86,9 @@ int main ()
     // TODO: Also switch from if statement to switch statements!
     printMenuText ();
 }
+
+/***************************************************************/
+// Driver Functions
 
 // Init those lousy pointers and set the League Matrix
 void
