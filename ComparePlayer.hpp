@@ -12,10 +12,16 @@
 #ifndef COMPARE_PLAYER_HPP
 #define COMPARE_PLAYER_HPP
 
+/***************************************************************/
+// Libraries and Headers
+
 #include <iostream>
 #include <vector>
 
 #include "Player.hpp"
+
+/***************************************************************/
+// Compare Player Class
 
 class ComparePlayer
 {
