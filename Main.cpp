@@ -36,6 +36,9 @@ void
 init ();
 
 void
+headToHeadResults (int);
+
+void
 printComparePlayerMenu ();
 
 void
@@ -79,7 +82,7 @@ int main ()
     printMenuText ();
 }
 
-// Init those lousy pointers
+// Init those lousy pointers and set the League Matrix
 void
 init ()
 {
@@ -95,7 +98,26 @@ init ()
     s_league -> setLeagueMatrix("League.csv");
 }
 
+void
+headToHeadResults (int result)
+{
+    if (result == 1) 
+    {
+        std::cout << playerOneName << " won the matchup!" << "\n";
+    } 
+    else if (result == 2) 
+    {
+        std::cout << playerTwoName << " won the matchup!" << "\n";
+    } 
+    else 
+    {
+        std::cout << "The result was a draw!" << "\n";
+    }
+}
+
 // Prints Compare Player Menu Options
+// TODO: Make the text menus nicer
+// Add some dividers, clear the console, etc
 void
 printComparePlayerMenu ()
 {
@@ -116,6 +138,8 @@ printComparePlayerMenu ()
 }
 
 // Prints the output and menu options for the user
+// TODO: Make the text menus nicer
+// Add some dividers, clear the console, etc
 void
 printMenuText ()
 {
@@ -124,58 +148,66 @@ printMenuText ()
     std::cout << "1. Load Player 1 for Sim" << "\n";
     std::cout << "2. Load Player 2 for Sim" << "\n";
     std::cout << "3. Compare the two players" << "\n";
-    std::cout << "4. Quit" << "\n";
+    std::cout << "4. Clear Player Slots" << "\n";
+    std::cout << "5. Quit" << "\n";
 
     std::cin >> option;
     runMainMenuOptions (option);
 }
 
+// Executes functions depending on option chosen from the menu
 void
 runComparePlayerOptions (int option)
 {
+    int result = 0;
     if (option == 1)
     {
         std::cout << "Player stat head to head..." << "\n";
-        int result = s_compare_player -> playerHeadToHead ();
+        result = s_compare_player -> playerHeadToHead ();
 
-        if (result == 1) 
-        {
-            std::cout << playerOneName << " won the matchup!" << "\n";
-        } 
-        else if (result == 2) 
-        {
-            std::cout << playerTwoName << " won the matchup!" << "\n";
-        } 
-        else 
-        {
-            std::cout << "The result was a draw!" << "\n";
-        }
-
+        headToHeadResults (result);
     }
     else if (option == 2)
     {
+        std::cout << "Comparing Blocks Per Game..." << "\n";
+        result = s_compare_player -> comparePlayerBlocks ();
 
+        headToHeadResults (result);
     }
     else if (option == 3)
     {
+        std::cout << "Comparing Points Per Game..." << "\n";
+        result = s_compare_player -> comparePlayerPPG ();
 
+        headToHeadResults (result);
     }
     else if (option == 4)
     {
+        std::cout << "Comparing Rebounds Per Game..." << "\n";
+        result = s_compare_player -> comparePlayerRebounds ();
 
+        headToHeadResults (result);
     }
     else if (option == 5)
     {
+        std::cout << "Comparing Steals Per Game..." << "\n";
+        result = s_compare_player -> comparePlayerSteals ();
 
+        headToHeadResults (result);
     }
     else if (option == 6)
     {
-
+        printMenuText ();
     }
     else if (option == 7)
     {
-
+        exit (0);
     }
+    else 
+    {
+        std::cout << "That is not a valid option..." << "\n";
+    }
+    printComparePlayerMenu ();
 }
 
 // Ask user for a player name and then extract the stats associated with
@@ -225,6 +257,13 @@ runMainMenuOptions (int option)
         printComparePlayerMenu ();
     }
     else if (option == 4)
+    {
+        playerOneName = "";
+        playerTwoName = "";
+        player_one_vec.clear ();
+        player_two_vec.clear ();
+    }
+    else if (option == 5)
     {
         exit (0);
     }
