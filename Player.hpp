@@ -7,10 +7,16 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
+/***************************************************************/
+// Libraries and Headers
+
 #include <iostream>
 #include <vector>
 
 #include "Team.hpp"
+
+/***************************************************************/
+// Player Class
 
 class Player
 {
