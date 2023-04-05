@@ -7,10 +7,16 @@
 #ifndef LEAGUE_HPP
 #define LEAGUE_HPP
 
+/***************************************************************/
+// Libraries and Headers
+
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
+
+/***************************************************************/
+// League Class
 
 class League
 {
