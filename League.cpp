@@ -4,7 +4,13 @@
 * Description: The League Class
 */
 
+/***************************************************************/
+// Libraries and Headers
+
 #include "League.hpp"
+
+/***************************************************************/
+// Class Functions
 
 // Standard Constructor
 League :: League ()
