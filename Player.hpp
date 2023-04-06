@@ -37,6 +37,7 @@ class Player
         testIndividualStats ();
 
         // TODO: ADD PLAYER NAMES
+        std::string playerName;
         int games, gameStarts;
         float minutesPlayed, fieldGoalsMade, fieldGoalAttempts, fieldGoalPct,
         threePtMade, threePtAttempts, threePtPct, twoPtMade, twoPtAttempts, twoPtPct,
