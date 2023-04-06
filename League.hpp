@@ -33,6 +33,9 @@ class League
         void
         setLeagueMatrix (const std::string& filename);
 
+        void
+        sortPlayersByName ();
+
     private:
         // Might want to switch to a different data type
         std::vector <std::vector <std::string>> league_matrix;
