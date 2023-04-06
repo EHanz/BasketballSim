@@ -91,6 +91,7 @@ int main ()
 // Driver Functions
 
 // Init those lousy pointers and set the League Matrix
+// Maybe switch from pointer to reference??
 void
 init ()
 {
@@ -106,6 +107,8 @@ init ()
     s_league -> setLeagueMatrix("League.csv");
 }
 
+// Puts both players in a head to head matchup
+// Player wins if they win in more categories
 void
 headToHeadResults (int result)
 {
