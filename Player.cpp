@@ -64,6 +64,10 @@ Player :: setStatsFromLeagueMatrix (std::vector<std::string> playerVector)
     // Empty the player vector
     p_stats.clear ();
 
+    playerName = playerVector[1];
+
+    //std::cout << "Making sure player name is set: " << playerName << "\n";
+
     // Assigns the incoming values to the local p_stats
     for (int i = 5; i < playerVector.size () - 1; i++)
     {
