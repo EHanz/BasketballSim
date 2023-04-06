@@ -16,7 +16,7 @@
 // Standard Constructor
 ComparePlayer :: ComparePlayer ()
 {
-
+  
 }
 
 // TODO: All below functions, find a better way to compare Players
