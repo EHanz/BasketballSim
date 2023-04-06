@@ -73,3 +73,9 @@ League :: setLeagueMatrix (const std::string& filename)
         league_matrix.push_back (parsedRow);
     }
 }
+
+void
+League :: sortPlayersByName ()
+{
+    
+}
