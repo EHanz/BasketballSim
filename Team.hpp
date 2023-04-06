@@ -24,6 +24,15 @@ class Team
         Team ();
         ~Team ();
 
+        std::vector <std::string>
+        getTeamStats ();
+
+        void
+        setTeamStats ();
+
+    private:
+        
+
 };
 
 #endif
