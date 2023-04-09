@@ -25,40 +25,25 @@ ComparePlayer :: ComparePlayer ()
 int
 ComparePlayer :: comparePlayerBlocks ()
 {
-    if (player_one_stats[21] > player_two_stats[21])
-    {
-        return 1;
-    }
-    else 
-    {
-        return 2;
-    }
+    if (player_one_stats[21] > player_two_stats[21]) { return 1; }
+    else if (player_two_stats[21] > player_one_stats[21]) { return 2; }
+    else { return 0; }
 }
 
 int
 ComparePlayer :: comparePlayerPPG ()
 {
-    if (player_one_stats[24] > player_two_stats[24])
-    {
-        return 1;
-    }
-    else 
-    {
-        return 2;
-    }
+    if (player_one_stats[24] > player_two_stats[24]) { return 1; }
+    else if (player_two_stats[24] > player_one_stats[24]) { return 2; }
+    else { return 0; }
 }
 
 int
 ComparePlayer :: comparePlayerRebounds ()
 {
-    if (player_one_stats[18] > player_two_stats[18])
-    {
-        return 1;
-    }
-    else 
-    {
-        return 2;
-    }
+    if (player_one_stats[18] > player_two_stats[18]) { return 1; }
+    else if (player_two_stats[18] > player_one_stats[18]) { return 2; }
+    else { return 0; }
 }
 
 int
@@ -72,14 +57,9 @@ ComparePlayer :: comparePlayerStat (int index)
 int
 ComparePlayer :: comparePlayerSteals ()
 {
-    if (player_one_stats[20] > player_two_stats[20])
-    {
-        return 1;
-    }
-    else 
-    {
-        return 2;
-    }
+    if (player_one_stats[20] > player_two_stats[20]) { return 1; }
+    else if (player_two_stats[20] > player_one_stats[20]) { return 2; }
+    else { return 0; }
 }
 
 int
