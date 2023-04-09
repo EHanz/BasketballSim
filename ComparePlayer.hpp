@@ -41,6 +41,9 @@ class ComparePlayer
         comparePlayerRebounds ();
 
         int
+        comparePlayerStat (int index);
+
+        int
         comparePlayerSteals ();
 
         int
