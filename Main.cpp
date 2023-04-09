@@ -134,6 +134,7 @@ printComparePlayerMenu ()
 {
     int option = 0;
 
+    std::cout << "********************************" << "\n";
     std::cout << "\n";
     std::cout << playerOneName << " versus " << playerTwoName << "\n";
     std::cout << "1. Better Stats " << "\n";
@@ -155,7 +156,7 @@ void
 printMenuText ()
 {
     int option = 0;
-    std::cout << "**************************" << "\n";
+    std::cout << "********************************" << "\n";
     std::cout << "Would you like to: " << "\n";
     std::cout << "1. Load Player 1 for Sim" << "\n";
     std::cout << "2. Load Player 2 for Sim" << "\n";
@@ -233,7 +234,7 @@ runMainMenuOptions (int option)
     if (option == 1)
     {
         player_one_vec.clear ();
-
+        std::cout << "********************************" << "\n";
         std::cout << "What is the name of Player 1?" << "\n";
         std::cin.ignore ();
         std::getline (std::cin, playerOneName);
