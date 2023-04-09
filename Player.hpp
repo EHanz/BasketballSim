@@ -28,13 +28,13 @@ class Player
         getPlayerStats ();
 
         void
+        printIndividualStats ();
+
+        void
         setIndividualStats ();
 
         void
         setStatsFromLeagueMatrix (std::vector <std::string> playerVector);
-
-        void
-        testIndividualStats ();
 
         // TODO: ADD PLAYER NAMES
         std::string playerName;
