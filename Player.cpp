@@ -82,7 +82,7 @@ Player :: setStatsFromLeagueMatrix (std::vector<std::string> playerVector)
 
 // Tests for player stats
 void
-Player :: testIndividualStats ()
+Player :: printIndividualStats ()
 {
     // Output the player's stat line
     std :: cout << "Preparing Player Statistics..." << "\n";
