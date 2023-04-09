@@ -306,28 +306,28 @@ setPlayerClass (Player* player, std::vector <std::string> playerVector)
 void
 testLeagueClass ()
 {
-    std::cout << "Testing League Class..." << "\n";
+    // std::cout << "Testing League Class..." << "\n";
 
-    std::vector <std::string> embiid_test;
-    std::vector <float> embiid_stats;
+    // std::vector <std::string> embiid_test;
+    // std::vector <float> embiid_stats;
 
-    std::vector <std::string> giannis_test;
-    std::vector <float> giannis_stats;
+    // std::vector <std::string> giannis_test;
+    // std::vector <float> giannis_stats;
 
-    // Embiid Tests
-    embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
+    // // Embiid Tests
+    // embiid_test = s_league -> getPlayerFromLeague ("Joel Embiid");
 
-    setPlayerClass (s_player_one, embiid_test);
+    // setPlayerClass (s_player_one, embiid_test);
 
-    // End Embiid Tests
+    // // End Embiid Tests
 
 
-    // Giannis Tests
-    giannis_test = s_league -> getPlayerFromLeague ("Giannis Antetokounmpo");
+    // // Giannis Tests
+    // giannis_test = s_league -> getPlayerFromLeague ("Giannis Antetokounmpo");
 
-    setPlayerClass (s_player_two, giannis_test);
+    // setPlayerClass (s_player_two, giannis_test);
 
-    // End Giannis Tests
+    // // End Giannis Tests
 
 }
 
