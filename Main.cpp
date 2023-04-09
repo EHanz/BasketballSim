@@ -214,6 +214,7 @@ runComparePlayerOptions (int option)
     }
     else if (option == 7)
     {
+        std::cout << "Exiting the simulator..." << "\n";
         exit (0);
     }
     else 
