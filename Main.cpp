@@ -161,8 +161,10 @@ printMenuText ()
     std::cout << "1. Load Player 1 for Sim" << "\n";
     std::cout << "2. Load Player 2 for Sim" << "\n";
     std::cout << "3. Compare the two players" << "\n";
-    std::cout << "4. Clear Player Slots" << "\n";
-    std::cout << "5. Quit" << "\n";
+    std::cout << "4. View " << playerOneName << " Stats" << "\n";
+    std::cout << "5. View " << playerTwoName << " Stats" << "\n";
+    std::cout << "6. Clear Player Slots" << "\n";
+    std::cout << "7. Quit" << "\n";
 
     std::cin >> option;
     runMainMenuOptions (option);
@@ -267,10 +269,19 @@ runMainMenuOptions (int option)
         s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
 
         // Print the Compare Player Menu Options
-
         printComparePlayerMenu ();
     }
     else if (option == 4)
+    {
+        std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
+        s_player_one -> printIndividualStats ();
+    }
+    else if (option == 5)
+    {
+        std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
+        s_player_two -> getPlayerStats ();
+    }
+    else if (option == 6)
     {
         std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
         playerOneName = "";
@@ -278,7 +289,7 @@ runMainMenuOptions (int option)
         player_one_vec.clear ();
         player_two_vec.clear ();
     }
-    else if (option == 5)
+    else if (option == 7)
     {
         std::cout << "Exiting the simulator..." << "\n";
         exit (0);
@@ -302,7 +313,7 @@ setPlayerClass (Player* player, std::vector <std::string> playerVector)
     // The vector of stats for the player
     player -> getPlayerStats ();
 
-    player -> testIndividualStats ();
+    player -> printIndividualStats ();
 }
 
 // Tests the functions of the League Class
