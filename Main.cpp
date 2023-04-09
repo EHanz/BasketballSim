@@ -271,6 +271,7 @@ runMainMenuOptions (int option)
     }
     else if (option == 4)
     {
+        std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
         playerOneName = "";
         playerTwoName = "";
         player_one_vec.clear ();
@@ -278,6 +279,7 @@ runMainMenuOptions (int option)
     }
     else if (option == 5)
     {
+        std::cout << "Exiting the simulator..." << "\n";
         exit (0);
     }
     else 
