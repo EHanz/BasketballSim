@@ -62,6 +62,14 @@ ComparePlayer :: comparePlayerRebounds ()
 }
 
 int
+ComparePlayer :: comparePlayerStat (int index)
+{
+    if (player_one_stats[index] > player_two_stats[index]) { return 1; }
+    else if (player_two_stats[index] > player_two_stats[index]) { return 2; }
+    else { return 0; }
+}
+
+int
 ComparePlayer :: comparePlayerSteals ()
 {
     if (player_one_stats[20] > player_two_stats[20])
@@ -79,11 +87,11 @@ ComparePlayer :: playerHeadToHead ()
 {
     int pOneTotal = 0;
     int pTwoTotal = 0;
-    if (comparePlayerBlocks () == 1) {pOneTotal++;} else {pTwoTotal++;}
-    if (comparePlayerPPG () == 1) {pOneTotal++;} else {pTwoTotal++;}
-    if (comparePlayerRebounds () == 1) {pOneTotal++;} else {pTwoTotal++;}
-    if (comparePlayerSteals () == 1) {pOneTotal++;} else {pTwoTotal++;}
-    if (pOneTotal > pTwoTotal) {return 1;} else if (pTwoTotal > pOneTotal) {return 2;} else {return 0;}
+    if (comparePlayerBlocks () == 1) { pOneTotal++; } else if (comparePlayerBlocks () == 2) { pTwoTotal++; }
+    if (comparePlayerPPG () == 1) { pOneTotal++; } else if (comparePlayerPPG () == 2) { pTwoTotal++; }
+    if (comparePlayerRebounds () == 1) { pOneTotal++; } else if (comparePlayerRebounds () == 2) { pTwoTotal++; }
+    if (comparePlayerSteals () == 1) { pOneTotal++; } else if (comparePlayerSteals () == 2) { pTwoTotal++; }
+    if (pOneTotal > pTwoTotal) { return 1; } else if (pTwoTotal > pOneTotal) { return 2;}  else { return 0; }
 }
 
 // Sets the stats of Player One only
