@@ -31,7 +31,7 @@ class Team
         setTeamStats ();
 
     private:
-        
+        std::vector <std::vector <std::string>> team_matrix;
 
 };
 
