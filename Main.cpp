@@ -101,10 +101,16 @@ init ()
     s_player_two = new Player ();
     s_team = new Team ();
 
+    const std::string leagueFilename = "League.csv";
+    const std::string teamFilename = "SixersTeam.csv";
+
     std::cout << "Welcome to the Basketball Simulator!" << "\n";
 
     // Boots up the matrix of all players in the league
-    s_league -> setLeagueMatrix("League.csv");
+    s_league -> setLeagueMatrix (leagueFilename);
+
+    // Boots up the matrix of the Sixers Team
+    s_team -> setTeamMatrix (teamFilename);
 }
 
 // Puts both players in a head to head matchup
