@@ -156,6 +156,7 @@ void
 printMenuText ()
 {
     int option = 0;
+    
     std::cout << "********************************" << "\n";
     std::cout << "Would you like to: " << "\n";
     std::cout << "1. Load Player 1 for Sim" << "\n";
