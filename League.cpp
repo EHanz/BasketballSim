@@ -28,7 +28,7 @@ League :: getPlayerFromLeague (std::string playerName)
 {
     std::cout << "Finding " << playerName << "... " << std::endl;
 
-    int p_iterator = 0;
+    int p_index = 0;
     std::vector <std::string> p_vector;
 
     std::cout << "Player Name is: " << playerName << std::endl;
@@ -37,14 +37,14 @@ League :: getPlayerFromLeague (std::string playerName)
     {
         if (league_matrix[i][1] == playerName)
         {
-            p_iterator = i;
+            p_index = i;
             break;
         }
     }
 
-    for (int j = 0; j < league_matrix[p_iterator].size (); j++)
+    for (int j = 0; j < league_matrix[p_index].size (); j++)
     {
-        p_vector.push_back (league_matrix[p_iterator][j]);
+        p_vector.push_back (league_matrix[p_index][j]);
     }
 
     return p_vector;
