@@ -10,6 +10,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <string>
 #include <vector>
 
 class Team
@@ -22,7 +23,13 @@ class Team
         getTeamMatrix ();
 
         void
+        setMatrixToVectors ();
+
+        void
         setTeamMatrix (const std::string& filename);
+
+        std::string
+        testMatrix ();
     
     private:
         std::vector<std::vector<std::string>> team_matrix;
