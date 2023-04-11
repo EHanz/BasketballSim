@@ -77,6 +77,8 @@ int main ()
     // TODO: Find where the csv files are for individual teams
     // and the player stats per game
 
+    //testTeamClass ();
+
     // TODO: implement league player csv file and find a good way to
     // navigate something that large besides vec matrix
 
@@ -358,4 +360,8 @@ void
 testTeamClass ()
 {
     std::cout << "Testing Team Class" << "\n";
+
+    std::string test = s_team -> testMatrix ();
+
+    std::cout << test << "\n";
 }
