@@ -19,6 +19,12 @@ ComparePlayer :: ComparePlayer ()
   
 }
 
+void
+ComparePlayer :: assignVecToFloats ()
+{
+    
+}
+
 // TODO: All below functions, find a better way to compare Players
 // Maybe individual vars for each stat or keep index better rather than
 // hard code the index value into the vector
