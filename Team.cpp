@@ -5,6 +5,7 @@
 */
 
 #include "Team.hpp"
+#include <string>
 
 Team :: Team ()
 {
@@ -15,6 +16,12 @@ std::vector<std::vector<std::string>>
 Team :: getTeamMatrix ()
 {
     return team_matrix;
+}
+
+void
+Team :: setMatrixToVectors ()
+{
+
 }
 
 void
@@ -37,4 +44,10 @@ Team :: setTeamMatrix (const std::string &filename)
 
         team_matrix.push_back (parsedRow);
     }
+}
+
+std::string
+Team :: testMatrix ()
+{
+    return team_matrix[0][1];
 }
