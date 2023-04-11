@@ -21,7 +21,7 @@ Team :: getTeamMatrix ()
 void
 Team :: setMatrixToVectors ()
 {
-
+    
 }
 
 void
