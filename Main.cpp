@@ -142,6 +142,8 @@ printComparePlayerMenu ()
 {
     int option = 0;
 
+    // s_compare_player -> testPlayerPointer (s_player_one, s_player_two);
+
     std::cout << "********************************" << "\n";
     std::cout << "\n";
     std::cout << playerOneName << " versus " << playerTwoName << "\n";
