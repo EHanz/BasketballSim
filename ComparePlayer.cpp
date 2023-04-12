@@ -103,6 +103,16 @@ ComparePlayer :: setPlayerTwoStats (Player* p2, std::string playerTwoName)
 void
 ComparePlayer :: setPlayerStats (Player* p1, Player* p2, std::string playerOneName, std::string playerTwoName)
 {
+    // Setting player name's for testing
+    playerOneName = p1 -> playerName;
+    playerTwoName = p2 -> playerName;
+
+    // Using pointers now, but will switch later
+    p_one = p1;
+    p_two = p2;
+
+    // Even though pointers are set. I am setting
+    // to vectors as well just to be safe
     player_one_stats = p1 -> getPlayerStats ();
     player_two_stats = p2 -> getPlayerStats (); 
 
@@ -121,7 +131,7 @@ ComparePlayer :: testPlayerPointer (Player *p1, Player *p2)
 {
     p_one = p1;
     p_two = p2;
-    
+
     std::cout << p_one -> playerName << "Assists: " << p_one -> assists << "\n";
     std::cout << p_two -> playerName << "Player Two Assists: " << p_two -> assists << "\n";
 }
