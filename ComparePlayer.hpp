@@ -61,6 +61,9 @@ class ComparePlayer
         void
         setPlayerStats (Player* p1, Player* p2, std::string playerOneName, std::string playerTwoName);
 
+        void
+        testPlayerPointer (Player* p1, Player* p2);
+
     private:
         // TODO: Find a better way to store stats than a ton of floats
         
@@ -72,6 +75,8 @@ class ComparePlayer
 
         // Maybe use private vars eventually in this class
         // Using globals from Player Class right now
+        Player* p_one;
+        Player* p_two;
 };
 
 #endif
