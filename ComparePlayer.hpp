@@ -35,6 +35,9 @@ class ComparePlayer
         assignVecToFloats ();
 
         int
+        comparePlayerAssists ();
+
+        int
         comparePlayerBlocks ();
 
         int
