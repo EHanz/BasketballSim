@@ -148,12 +148,13 @@ printComparePlayerMenu ()
     std::cout << "\n";
     std::cout << playerOneName << " versus " << playerTwoName << "\n";
     std::cout << "1. Better Stats " << "\n";
-    std::cout << "2. More Blocks " << "\n";
-    std::cout << "3. More PPG " << "\n";
-    std::cout << "4. More Rebounds " << "\n";
-    std::cout << "5. More Steals " << "\n";
-    std::cout << "6. Main Menu " << "\n";
-    std::cout << "7. Exit Simulator " << "\n"; 
+    std::cout << "2. More Assists " << "\n";
+    std::cout << "3. More Blocks " << "\n";
+    std::cout << "4. More PPG " << "\n";
+    std::cout << "5. More Rebounds " << "\n";
+    std::cout << "6. More Steals " << "\n";
+    std::cout << "7. Main Menu " << "\n";
+    std::cout << "8. Exit Simulator " << "\n"; 
 
     std::cin >> option;
     runComparePlayerOptions (option);
@@ -195,37 +196,44 @@ runComparePlayerOptions (int option)
     }
     else if (option == 2)
     {
+        std::cout << "Comparing Assists Per Game..." << "\n";
+        result = s_compare_player -> comparePlayerAssists ();
+
+        headToHeadResults (result);
+    }
+    else if (option == 3)
+    {
         std::cout << "Comparing Blocks Per Game..." << "\n";
         result = s_compare_player -> comparePlayerBlocks ();
 
         headToHeadResults (result);
     }
-    else if (option == 3)
+    else if (option == 4)
     {
         std::cout << "Comparing Points Per Game..." << "\n";
         result = s_compare_player -> comparePlayerPPG ();
 
         headToHeadResults (result);
     }
-    else if (option == 4)
+    else if (option == 5)
     {
         std::cout << "Comparing Rebounds Per Game..." << "\n";
         result = s_compare_player -> comparePlayerRebounds ();
 
         headToHeadResults (result);
     }
-    else if (option == 5)
+    else if (option == 6)
     {
         std::cout << "Comparing Steals Per Game..." << "\n";
         result = s_compare_player -> comparePlayerSteals ();
 
         headToHeadResults (result);
     }
-    else if (option == 6)
+    else if (option == 7)
     {
         printMenuText ();
     }
-    else if (option == 7)
+    else if (option == 8)
     {
         std::cout << "Exiting the simulator..." << "\n";
         exit (0);
