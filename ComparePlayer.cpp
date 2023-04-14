@@ -19,10 +19,21 @@ ComparePlayer :: ComparePlayer ()
   
 }
 
+// Might use this to assign the vector values to individual floats
+// To be determined...
 void
 ComparePlayer :: assignVecToFloats ()
 {
     
+}
+
+// Trying ternary operator here...
+int
+ComparePlayer :: comparePlayerAssists ()
+{
+    if (p_one -> assists > p_two -> assists) { return 1; }
+    else if (p_two -> assists > p_one -> assists) { return 2; }
+    else { return 0; }
 }
 
 // TODO: All below functions, find a better way to compare Players
