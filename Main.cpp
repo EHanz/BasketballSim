@@ -265,29 +265,34 @@ runMainMenuOptions (int option)
             std::getline (std::cin, playerTwoName);
             player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
             setPlayerClass (s_player_two, player_two_vec);
+            break;
         case 3:
             std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
             // Compare Player Options
             s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
             // Print the Compare Player Menu Options
             printComparePlayerMenu ();
+            break;
         case 4:
             std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
             s_player_one -> printIndividualStats ();
         case 5:
             std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
             s_player_two -> getPlayerStats ();
+            break;
         case 6:
             std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
             playerOneName = "";
             playerTwoName = "";
             player_one_vec.clear ();
             player_two_vec.clear ();
+            break;
         case 7:
             std::cout << "Exiting the simulator..." << "\n";
             exit (0);
         default:
             std::cout << "That is not a valid option. Please choose again." << "\n";
+            break;
     }
 
     // if (option == 1)
