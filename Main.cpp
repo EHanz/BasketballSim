@@ -228,7 +228,7 @@ runComparePlayerOptions (int option)
             std::cout << "That is not a valid option..." << "\n";
             break;
     }
-    
+
     printComparePlayerMenu ();
 }
 
@@ -240,70 +240,120 @@ runMainMenuOptions (int option)
 {
     std::vector <float> test_player;
 
-    if (option == 1)
+    switch (option)
     {
-        player_one_vec.clear ();
-        std::cout << "********************************" << "\n";
-        std::cout << "What is the name of Player 1?" << "\n";
-        std::cin.ignore ();
-        std::getline (std::cin, playerOneName);
+        case 1:
+            player_one_vec.clear ();
+            std::cout << "********************************" << "\n";
+            std::cout << "What is the name of Player 1?" << "\n";
+            std::cin.ignore ();
+            std::getline (std::cin, playerOneName);
 
-        player_one_vec = s_league -> getPlayerFromLeague (playerOneName);
-        setPlayerClass (s_player_one, player_one_vec);
+            player_one_vec = s_league -> getPlayerFromLeague (playerOneName);
+            setPlayerClass (s_player_one, player_one_vec);
 
-        std::cout << "\n";
-        std::cout << "\n";
+            std::cout << "\n";
+            std::cout << "\n";
 
-        test_player = s_player_one -> getPlayerStats ();
-        std::cout << test_player[2] << "\n";
+            test_player = s_player_one -> getPlayerStats ();
+            std::cout << test_player[2] << "\n";
+            break;
+        case 2:
+            player_two_vec.clear ();
+            std::cout << "What is the name of Player 2?" << "\n";
+            std::cin.ignore ();
+            std::getline (std::cin, playerTwoName);
+            player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
+            setPlayerClass (s_player_two, player_two_vec);
+        case 3:
+            std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
+            // Compare Player Options
+            s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
+            // Print the Compare Player Menu Options
+            printComparePlayerMenu ();
+        case 4:
+            std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
+            s_player_one -> printIndividualStats ();
+        case 5:
+            std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
+            s_player_two -> getPlayerStats ();
+        case 6:
+            std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
+            playerOneName = "";
+            playerTwoName = "";
+            player_one_vec.clear ();
+            player_two_vec.clear ();
+        case 7:
+            std::cout << "Exiting the simulator..." << "\n";
+            exit (0);
+        default:
+            std::cout << "That is not a valid option. Please choose again." << "\n";
     }
-    else if (option == 2)
-    {
-        player_two_vec.clear ();
 
-        std::cout << "What is the name of Player 2?" << "\n";
-        std::cin.ignore ();
-        std::getline (std::cin, playerTwoName);
+    // if (option == 1)
+    // {
+    //     player_one_vec.clear ();
+    //     std::cout << "********************************" << "\n";
+    //     std::cout << "What is the name of Player 1?" << "\n";
+    //     std::cin.ignore ();
+    //     std::getline (std::cin, playerOneName);
 
-        player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
-        setPlayerClass (s_player_two, player_two_vec);
-    }
-    else if (option == 3)
-    {
-        std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
-        // Compare Player Options
-        s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
+    //     player_one_vec = s_league -> getPlayerFromLeague (playerOneName);
+    //     setPlayerClass (s_player_one, player_one_vec);
 
-        // Print the Compare Player Menu Options
-        printComparePlayerMenu ();
-    }
-    else if (option == 4)
-    {
-        std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
-        s_player_one -> printIndividualStats ();
-    }
-    else if (option == 5)
-    {
-        std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
-        s_player_two -> getPlayerStats ();
-    }
-    else if (option == 6)
-    {
-        std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
-        playerOneName = "";
-        playerTwoName = "";
-        player_one_vec.clear ();
-        player_two_vec.clear ();
-    }
-    else if (option == 7)
-    {
-        std::cout << "Exiting the simulator..." << "\n";
-        exit (0);
-    }
-    else 
-    {
-        std::cout << "That is not a valid option. Please choose again." << "\n";
-    }
+    //     std::cout << "\n";
+    //     std::cout << "\n";
+
+    //     test_player = s_player_one -> getPlayerStats ();
+    //     std::cout << test_player[2] << "\n";
+    // }
+    // else if (option == 2)
+    // {
+    //     player_two_vec.clear ();
+
+    //     std::cout << "What is the name of Player 2?" << "\n";
+    //     std::cin.ignore ();
+    //     std::getline (std::cin, playerTwoName);
+
+    //     player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
+    //     setPlayerClass (s_player_two, player_two_vec);
+    // }
+    // else if (option == 3)
+    // {
+    //     std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
+    //     // Compare Player Options
+    //     s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
+
+    //     // Print the Compare Player Menu Options
+    //     printComparePlayerMenu ();
+    // }
+    // else if (option == 4)
+    // {
+    //     std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
+    //     s_player_one -> printIndividualStats ();
+    // }
+    // else if (option == 5)
+    // {
+    //     std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
+    //     s_player_two -> getPlayerStats ();
+    // }
+    // else if (option == 6)
+    // {
+    //     std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
+    //     playerOneName = "";
+    //     playerTwoName = "";
+    //     player_one_vec.clear ();
+    //     player_two_vec.clear ();
+    // }
+    // else if (option == 7)
+    // {
+    //     std::cout << "Exiting the simulator..." << "\n";
+    //     exit (0);
+    // }
+    // else 
+    // {
+    //     std::cout << "That is not a valid option. Please choose again." << "\n";
+    // }
     printMenuText ();
 }
 
