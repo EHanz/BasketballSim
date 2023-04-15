@@ -187,61 +187,97 @@ void
 runComparePlayerOptions (int option)
 {
     int result = 0;
-    if (option == 1)
+    switch (option)
     {
-        std::cout << "Player stat head to head..." << "\n";
-        result = s_compare_player -> playerHeadToHead ();
+        case 1:
+            std::cout << "Player stat head to head..." << "\n";
+            result = s_compare_player -> playerHeadToHead ();
+            headToHeadResults (result);
+            break;
+        case 2:
+            std::cout << "Comparing Assists Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerAssists ();
+            headToHeadResults (result);
+        case 3:
+            std::cout << "Comparing Blocks Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerBlocks ();
+            headToHeadResults (result);
+        case 4:
+            std::cout << "Comparing Points Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerPPG ();
+            headToHeadResults (result);
+        case 5:
+            std::cout << "Comparing Rebounds Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerRebounds ();
+            headToHeadResults (result);
+        case 6:
+            std::cout << "Comparing Steals Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerSteals ();
+            headToHeadResults (result);
+        case 7:
+            printMenuText ();
+            break;
+        case 8:
+            exit (0);
+        default:
+            std::cout << "That is not a valid option..." << "\n";
+    }
 
-        headToHeadResults (result);
-    }
-    else if (option == 2)
-    {
-        std::cout << "Comparing Assists Per Game..." << "\n";
-        result = s_compare_player -> comparePlayerAssists ();
+    // if (option == 1)
+    // {
+    //     std::cout << "Player stat head to head..." << "\n";
+    //     result = s_compare_player -> playerHeadToHead ();
 
-        headToHeadResults (result);
-    }
-    else if (option == 3)
-    {
-        std::cout << "Comparing Blocks Per Game..." << "\n";
-        result = s_compare_player -> comparePlayerBlocks ();
+    //     headToHeadResults (result);
+    // }
+    // else if (option == 2)
+    // {
+    //     std::cout << "Comparing Assists Per Game..." << "\n";
+    //     result = s_compare_player -> comparePlayerAssists ();
 
-        headToHeadResults (result);
-    }
-    else if (option == 4)
-    {
-        std::cout << "Comparing Points Per Game..." << "\n";
-        result = s_compare_player -> comparePlayerPPG ();
+    //     headToHeadResults (result);
+    // }
+    // else if (option == 3)
+    // {
+    //     std::cout << "Comparing Blocks Per Game..." << "\n";
+    //     result = s_compare_player -> comparePlayerBlocks ();
 
-        headToHeadResults (result);
-    }
-    else if (option == 5)
-    {
-        std::cout << "Comparing Rebounds Per Game..." << "\n";
-        result = s_compare_player -> comparePlayerRebounds ();
+    //     headToHeadResults (result);
+    // }
+    // else if (option == 4)
+    // {
+    //     std::cout << "Comparing Points Per Game..." << "\n";
+    //     result = s_compare_player -> comparePlayerPPG ();
 
-        headToHeadResults (result);
-    }
-    else if (option == 6)
-    {
-        std::cout << "Comparing Steals Per Game..." << "\n";
-        result = s_compare_player -> comparePlayerSteals ();
+    //     headToHeadResults (result);
+    // }
+    // else if (option == 5)
+    // {
+    //     std::cout << "Comparing Rebounds Per Game..." << "\n";
+    //     result = s_compare_player -> comparePlayerRebounds ();
 
-        headToHeadResults (result);
-    }
-    else if (option == 7)
-    {
-        printMenuText ();
-    }
-    else if (option == 8)
-    {
-        std::cout << "Exiting the simulator..." << "\n";
-        exit (0);
-    }
-    else 
-    {
-        std::cout << "That is not a valid option..." << "\n";
-    }
+    //     headToHeadResults (result);
+    // }
+    // else if (option == 6)
+    // {
+    //     std::cout << "Comparing Steals Per Game..." << "\n";
+    //     result = s_compare_player -> comparePlayerSteals ();
+
+    //     headToHeadResults (result);
+    // }
+    // else if (option == 7)
+    // {
+    //     printMenuText ();
+    // }
+    // else if (option == 8)
+    // {
+    //     std::cout << "Exiting the simulator..." << "\n";
+    //     exit (0);
+    // }
+    // else 
+    // {
+    //     std::cout << "That is not a valid option..." << "\n";
+    // }
     printComparePlayerMenu ();
 }
 
