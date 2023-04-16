@@ -187,6 +187,8 @@ void
 runComparePlayerOptions (int option)
 {
     int result = 0;
+
+    // Testing the switch/case statement
     switch (option)
     {
         case 1:
@@ -240,6 +242,7 @@ runMainMenuOptions (int option)
 {
     std::vector <float> test_player;
 
+    // Testing the switch/case statement
     switch (option)
     {
         case 1:
@@ -295,70 +298,6 @@ runMainMenuOptions (int option)
             break;
     }
 
-    // if (option == 1)
-    // {
-    //     player_one_vec.clear ();
-    //     std::cout << "********************************" << "\n";
-    //     std::cout << "What is the name of Player 1?" << "\n";
-    //     std::cin.ignore ();
-    //     std::getline (std::cin, playerOneName);
-
-    //     player_one_vec = s_league -> getPlayerFromLeague (playerOneName);
-    //     setPlayerClass (s_player_one, player_one_vec);
-
-    //     std::cout << "\n";
-    //     std::cout << "\n";
-
-    //     test_player = s_player_one -> getPlayerStats ();
-    //     std::cout << test_player[2] << "\n";
-    // }
-    // else if (option == 2)
-    // {
-    //     player_two_vec.clear ();
-
-    //     std::cout << "What is the name of Player 2?" << "\n";
-    //     std::cin.ignore ();
-    //     std::getline (std::cin, playerTwoName);
-
-    //     player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
-    //     setPlayerClass (s_player_two, player_two_vec);
-    // }
-    // else if (option == 3)
-    // {
-    //     std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
-    //     // Compare Player Options
-    //     s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
-
-    //     // Print the Compare Player Menu Options
-    //     printComparePlayerMenu ();
-    // }
-    // else if (option == 4)
-    // {
-    //     std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
-    //     s_player_one -> printIndividualStats ();
-    // }
-    // else if (option == 5)
-    // {
-    //     std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
-    //     s_player_two -> getPlayerStats ();
-    // }
-    // else if (option == 6)
-    // {
-    //     std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
-    //     playerOneName = "";
-    //     playerTwoName = "";
-    //     player_one_vec.clear ();
-    //     player_two_vec.clear ();
-    // }
-    // else if (option == 7)
-    // {
-    //     std::cout << "Exiting the simulator..." << "\n";
-    //     exit (0);
-    // }
-    // else 
-    // {
-    //     std::cout << "That is not a valid option. Please choose again." << "\n";
-    // }
     printMenuText ();
 }
 
