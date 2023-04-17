@@ -45,6 +45,9 @@ ComparePlayer :: comparePlayerAssists ()
 int
 ComparePlayer :: comparePlayerBlocks ()
 {
+    std::cout << player_one_name << " has: " << p_one -> blocks << "\n";
+    std::cout << player_two_name << " has: " << p_two -> blocks << "\n";
+
     if (player_one_stats[21] > player_two_stats[21]) { return 1; }
     else if (player_two_stats[21] > player_one_stats[21]) { return 2; }
     else { return 0; }
@@ -53,6 +56,9 @@ ComparePlayer :: comparePlayerBlocks ()
 int
 ComparePlayer :: comparePlayerPPG ()
 {
+    std::cout << player_one_name << " has: " << p_one -> ppg << "\n";
+    std::cout << player_two_name << " has: " << p_two -> ppg << "\n";
+
     if (player_one_stats[24] > player_two_stats[24]) { return 1; }
     else if (player_two_stats[24] > player_one_stats[24]) { return 2; }
     else { return 0; }
@@ -61,6 +67,9 @@ ComparePlayer :: comparePlayerPPG ()
 int
 ComparePlayer :: comparePlayerRebounds ()
 {
+    std::cout << player_one_name << " has: " << p_one -> totalReb << "\n";
+    std::cout << player_two_name << " has: " << p_two -> totalReb << "\n";
+
     if (player_one_stats[18] > player_two_stats[18]) { return 1; }
     else if (player_two_stats[18] > player_one_stats[18]) { return 2; }
     else { return 0; }
@@ -77,6 +86,9 @@ ComparePlayer :: comparePlayerStat (int index)
 int
 ComparePlayer :: comparePlayerSteals ()
 {
+    std::cout << player_one_name << " has: " << p_one -> steals << "\n";
+    std::cout << player_two_name << " has: " << p_two -> steals << "\n";
+
     if (player_one_stats[20] > player_two_stats[20]) { return 1; }
     else if (player_two_stats[20] > player_one_stats[20]) { return 2; }
     else { return 0; }
@@ -87,6 +99,7 @@ ComparePlayer :: playerHeadToHead ()
 {
     int pOneTotal = 0;
     int pTwoTotal = 0;
+    if (comparePlayerAssists() == 1) { pOneTotal++; } else if (comparePlayerAssists() == 2) { pTwoTotal++; }
     if (comparePlayerBlocks () == 1) { pOneTotal++; } else if (comparePlayerBlocks () == 2) { pTwoTotal++; }
     if (comparePlayerPPG () == 1) { pOneTotal++; } else if (comparePlayerPPG () == 2) { pTwoTotal++; }
     if (comparePlayerRebounds () == 1) { pOneTotal++; } else if (comparePlayerRebounds () == 2) { pTwoTotal++; }
