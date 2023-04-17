@@ -187,7 +187,7 @@ void
 runComparePlayerOptions (int option)
 {
     int result = 0;
-
+    
     // Testing the switch/case statement
     switch (option)
     {
