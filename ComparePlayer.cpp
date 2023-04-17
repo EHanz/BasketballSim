@@ -31,6 +31,9 @@ ComparePlayer :: assignVecToFloats ()
 int
 ComparePlayer :: comparePlayerAssists ()
 {
+    std::cout << player_one_name << " has: " << p_one -> assists << "\n";
+    std::cout << player_two_name << " has: " << p_two -> assists << "\n";
+
     if (p_one -> assists > p_two -> assists) { return 1; }
     else if (p_two -> assists > p_one -> assists) { return 2; }
     else { return 0; }
@@ -115,8 +118,8 @@ void
 ComparePlayer :: setPlayerStats (Player* p1, Player* p2, std::string playerOneName, std::string playerTwoName)
 {
     // Setting player name's for testing
-    playerOneName = p1 -> playerName;
-    playerTwoName = p2 -> playerName;
+    player_one_name = p1 -> playerName;
+    player_two_name = p2 -> playerName;
 
     // Using pointers now, but will switch later
     p_one = p1;
@@ -127,14 +130,6 @@ ComparePlayer :: setPlayerStats (Player* p1, Player* p2, std::string playerOneNa
     player_one_stats = p1 -> getPlayerStats ();
     player_two_stats = p2 -> getPlayerStats (); 
 
-    if (p1->assists > p2->assists)
-    {
-        std::cout << "Player One Has More Assists Per Game" << "\n";
-    }
-    else 
-    {
-        std::cout << "Player Two Has More Assists Per Game" << "\n";
-    }
 }
 
 void
