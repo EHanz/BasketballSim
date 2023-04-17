@@ -187,7 +187,9 @@ void
 runComparePlayerOptions (int option)
 {
     int result = 0;
-    
+
+    std::cout << "********************************" << "\n";
+
     // Testing the switch/case statement
     switch (option)
     {
@@ -242,12 +244,14 @@ runMainMenuOptions (int option)
 {
     std::vector <float> test_player;
 
+    std::cout << "********************************" << "\n";
+
     // Testing the switch/case statement
     switch (option)
     {
         case 1:
             player_one_vec.clear ();
-            std::cout << "********************************" << "\n";
+            
             std::cout << "What is the name of Player 1?" << "\n";
             std::cin.ignore ();
             std::getline (std::cin, playerOneName);

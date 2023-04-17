@@ -132,6 +132,8 @@ ComparePlayer :: setPlayerStats (Player* p1, Player* p2, std::string playerOneNa
 
 }
 
+// Test the Player's Pointers and ensures the values were
+// assigned properly
 void
 ComparePlayer :: testPlayerPointer (Player *p1, Player *p2)
 {
