@@ -299,6 +299,10 @@ runMainMenuOptions (int option)
         case 7:
             std::cout << "Exiting the simulator..." << "\n";
             exit (0);
+        case 8:
+            s_league -> listPlayersInLeague ();
+        case 9:
+            s_league -> listPlayersInLeague ();
         default:
             std::cout << "That is not a valid option. Please choose again." << "\n";
             break;
