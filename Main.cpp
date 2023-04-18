@@ -177,6 +177,8 @@ printMenuText ()
     std::cout << "5. View " << playerTwoName << " Stats" << "\n";
     std::cout << "6. Clear Player Slots" << "\n";
     std::cout << "7. Quit" << "\n";
+    std::cout << "8. Add Player 1 from List: " << "\n";
+    std::cout << "9. Add Player 2 from List: " << "\n";
 
     std::cin >> option;
     runMainMenuOptions (option);
