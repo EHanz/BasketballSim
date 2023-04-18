@@ -30,7 +30,10 @@ class League
         std::vector <std::string>
         getPlayerFromLeague (std::string playerName);
 
-        void
+        std::vector <std::string>
+        getPlayerFromLeague (int index);
+
+        int
         listPlayersInLeague ();
 
         void
