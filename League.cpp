@@ -50,9 +50,24 @@ League :: getPlayerFromLeague (std::string playerName)
     return p_vector;
 }
 
+std::vector <std::string>
+League :: getPlayerFromLeague (int index)
+{
+    std::vector <std::string> p_vector;
+    
+    for (int j = 0; j < league_matrix[index].size (); j++)
+    {
+        p_vector.push_back (league_matrix[index][j]);
+    }
+
+    std::cout << p_vector[1] << "\n";
+
+    return p_vector;
+}
+
 // TODO: List all the players in the league
 // in an ORGANIZED fashion
-void
+int
 League :: listPlayersInLeague ()
 {
     int index = 0;
@@ -61,6 +76,10 @@ League :: listPlayersInLeague ()
     {
         std::cout << i << ". " << league_matrix[i][1] << "\n";
     }
+
+    std::cin >> index;
+
+    return index;
 }
 
 // Loads the matrix of all players in the NBA
