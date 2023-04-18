@@ -281,10 +281,15 @@ runMainMenuOptions (int option)
             player_one_vec.clear ();
             index = s_league -> listPlayersInLeague ();
             player_one_vec = s_league -> getPlayerFromLeague (index);
+            setPlayerClass (s_player_one, player_one_vec);
+            playerOneName = s_player_one -> playerName;
             break;
         case 4:
             player_two_vec.clear ();
             index = s_league -> listPlayersInLeague ();
+            player_two_vec = s_league -> getPlayerFromLeague (index);
+            setPlayerClass (s_player_two, player_two_vec);
+            playerTwoName = s_player_two -> playerName;
             break;
         case 5:
             std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
