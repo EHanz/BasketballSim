@@ -31,6 +31,9 @@ class League
         getPlayerFromLeague (std::string playerName);
 
         void
+        listPlayersInLeague ();
+
+        void
         setLeagueMatrix (const std::string& filename);
 
         void
