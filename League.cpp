@@ -50,6 +50,12 @@ League :: getPlayerFromLeague (std::string playerName)
     return p_vector;
 }
 
+void
+League :: listPlayersInLeague ()
+{
+    
+}
+
 // Loads the matrix of all players in the NBA
 // Data is extracted from the League.csv
 void
