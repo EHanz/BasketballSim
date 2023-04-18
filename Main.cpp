@@ -226,13 +226,13 @@ printMenuText ()
     std::cout << "Would you like to: " << "\n";
     std::cout << "1. Load Player 1 for Sim" << "\n";
     std::cout << "2. Load Player 2 for Sim" << "\n";
-    std::cout << "3. Compare the two players" << "\n";
-    std::cout << "4. View " << playerOneName << " Stats" << "\n";
-    std::cout << "5. View " << playerTwoName << " Stats" << "\n";
-    std::cout << "6. Clear Player Slots" << "\n";
-    std::cout << "7. Quit" << "\n";
-    std::cout << "8. Add Player 1 from List: " << "\n";
-    std::cout << "9. Add Player 2 from List: " << "\n";
+    std::cout << "3. Add Player 1 from List: " << "\n";
+    std::cout << "4. Add Player 2 from List: " << "\n";
+    std::cout << "5. Compare the two players" << "\n";
+    std::cout << "6. View " << playerOneName << " Stats" << "\n";
+    std::cout << "7. View " << playerTwoName << " Stats" << "\n";
+    std::cout << "8. Clear Player Slots" << "\n";
+    std::cout << "9. Quit" << "\n";
 
     std::cin >> option;
     runMainMenuOptions (option);
@@ -245,6 +245,8 @@ void
 runMainMenuOptions (int option)
 {
     std::vector <float> test_player;
+
+    int index = 0;
 
     std::cout << "********************************" << "\n";
 
@@ -276,33 +278,38 @@ runMainMenuOptions (int option)
             setPlayerClass (s_player_two, player_two_vec);
             break;
         case 3:
+            player_one_vec.clear ();
+            index = s_league -> listPlayersInLeague ();
+            player_one_vec = s_league -> getPlayerFromLeague (index);
+            break;
+        case 4:
+            player_two_vec.clear ();
+            index = s_league -> listPlayersInLeague ();
+            break;
+        case 5:
             std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
             // Compare Player Options
             s_compare_player -> setPlayerStats (s_player_one, s_player_two, playerOneName, playerTwoName);
             // Print the Compare Player Menu Options
             printComparePlayerMenu ();
             break;
-        case 4:
+        case 6:
             std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
             s_player_one -> printIndividualStats ();
-        case 5:
+        case 7:
             std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
             s_player_two -> getPlayerStats ();
             break;
-        case 6:
+        case 8:
             std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
             playerOneName = "";
             playerTwoName = "";
             player_one_vec.clear ();
             player_two_vec.clear ();
             break;
-        case 7:
+        case 9:
             std::cout << "Exiting the simulator..." << "\n";
             exit (0);
-        case 8:
-            s_league -> listPlayersInLeague ();
-        case 9:
-            s_league -> listPlayersInLeague ();
         default:
             std::cout << "That is not a valid option. Please choose again." << "\n";
             break;
