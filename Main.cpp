@@ -160,30 +160,6 @@ printComparePlayerMenu ()
     runComparePlayerOptions (option);
 }
 
-// Prints the output and menu options for the user
-// TODO: Make the text menus nicer
-// Add some dividers, clear the console, etc
-void
-printMenuText ()
-{
-    int option = 0;
-    
-    std::cout << "********************************" << "\n";
-    std::cout << "Would you like to: " << "\n";
-    std::cout << "1. Load Player 1 for Sim" << "\n";
-    std::cout << "2. Load Player 2 for Sim" << "\n";
-    std::cout << "3. Compare the two players" << "\n";
-    std::cout << "4. View " << playerOneName << " Stats" << "\n";
-    std::cout << "5. View " << playerTwoName << " Stats" << "\n";
-    std::cout << "6. Clear Player Slots" << "\n";
-    std::cout << "7. Quit" << "\n";
-    std::cout << "8. Add Player 1 from List: " << "\n";
-    std::cout << "9. Add Player 2 from List: " << "\n";
-
-    std::cin >> option;
-    runMainMenuOptions (option);
-}
-
 // Executes functions depending on option chosen from the menu
 void
 runComparePlayerOptions (int option)
@@ -236,6 +212,30 @@ runComparePlayerOptions (int option)
     }
 
     printComparePlayerMenu ();
+}
+
+// Prints the output and menu options for the user
+// TODO: Make the text menus nicer
+// Add some dividers, clear the console, etc
+void
+printMenuText ()
+{
+    int option = 0;
+    
+    std::cout << "********************************" << "\n";
+    std::cout << "Would you like to: " << "\n";
+    std::cout << "1. Load Player 1 for Sim" << "\n";
+    std::cout << "2. Load Player 2 for Sim" << "\n";
+    std::cout << "3. Compare the two players" << "\n";
+    std::cout << "4. View " << playerOneName << " Stats" << "\n";
+    std::cout << "5. View " << playerTwoName << " Stats" << "\n";
+    std::cout << "6. Clear Player Slots" << "\n";
+    std::cout << "7. Quit" << "\n";
+    std::cout << "8. Add Player 1 from List: " << "\n";
+    std::cout << "9. Add Player 2 from List: " << "\n";
+
+    std::cin >> option;
+    runMainMenuOptions (option);
 }
 
 // Ask user for a player name and then extract the stats associated with
