@@ -106,10 +106,12 @@ League :: setLeagueMatrix (const std::string& filename)
     }
 }
 
+// TODO: Read in the matrix and set each row as a Player Object
+// That way all players are initialized at start
 void
 League :: setPlayersFromMatrix ()
 {
-    
+
 }
 
 void
