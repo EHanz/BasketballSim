@@ -10,6 +10,7 @@
 /***************************************************************/
 // Libraries and Headers
 
+#include "Player.hpp"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -48,6 +49,12 @@ class League
     private:
         // Might want to switch to a different data type
         std::vector <std::vector <std::string>> league_matrix;
+
+        // Would it be possible to setup Player as a struct or
+        // is that data type too simple?
+
+        // Vector of Players in League
+        std::vector <Player> players;
 };
 
 #endif
