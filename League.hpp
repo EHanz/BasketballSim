@@ -40,6 +40,9 @@ class League
         setLeagueMatrix (const std::string& filename);
 
         void
+        setPlayersFromMatrix ();
+
+        void
         sortPlayersByName ();
 
     private:
