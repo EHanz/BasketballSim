@@ -107,6 +107,12 @@ League :: setLeagueMatrix (const std::string& filename)
 }
 
 void
+League :: setPlayersFromMatrix ()
+{
+    
+}
+
+void
 League :: sortPlayersByName ()
 {
     
