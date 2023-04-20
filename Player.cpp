@@ -18,6 +18,14 @@ Player :: Player ()
     
 }
 
+Player :: Player (int g, int gS, float mP, float fGM, float fGA, float fGP,
+                 float tPM, float tPA, float tPP, float twoPM, float twoPA, float twoPP,
+                 float eFGP, float fTM, float fTA, float fTP, float oR, 
+                 float dR, float tR, float a, float s, float b, float t, float pF, float pPG)
+{
+
+}
+
 // Returns the array of player stats
 std::vector <float>
 Player :: getPlayerStats () { return p_stats; }
