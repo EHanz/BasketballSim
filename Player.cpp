@@ -18,6 +18,7 @@ Player :: Player ()
     
 }
 
+// Constructor where you can hard code all the values
 Player :: Player (int g, int gS, float mP, float fGM, float fGA, float fGP,
                  float tPM, float tPA, float tPP, float twoPM, float twoPA, float twoPP,
                  float eFGP, float fTM, float fTA, float fTP, float oR, 
