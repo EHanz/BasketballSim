@@ -21,6 +21,8 @@
 class Player
 {
     public: 
+        // Class Constructors and Deconstructor
+
         Player ();
 
         Player (int g, int gS, float mP, float fGM, float fGA, float fGP,
@@ -29,6 +31,8 @@ class Player
                 float dR, float tR, float a, float s, float b, float t, float pF, float pPG);
 
         ~Player ();
+
+        // Class Functions
 
         std::vector <float>
         getPlayerStats ();
@@ -42,7 +46,6 @@ class Player
         void
         setStatsFromLeagueMatrix (std::vector <std::string> playerVector);
 
-        // TODO: ADD PLAYER NAMES
         std::string playerName;
         int games, gameStarts;
         float minutesPlayed, fieldGoalsMade, fieldGoalAttempts, fieldGoalPct,
@@ -51,6 +54,8 @@ class Player
         defReb, totalReb, assists, steals, blocks, turnovers, personalFouls, ppg;
 
     private:
+        // Class Variables
+
         // TODO: find a better way to store all these stats
         // Too many vars for one class
         std::vector <float> p_stats;
