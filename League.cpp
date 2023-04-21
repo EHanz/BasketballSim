@@ -114,6 +114,7 @@ League :: setPlayersFromMatrix ()
 
 }
 
+// TODO: Sort the Players by their name, alphabetically
 void
 League :: sortPlayersByName ()
 {
