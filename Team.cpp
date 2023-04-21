@@ -7,23 +7,27 @@
 #include "Team.hpp"
 #include <string>
 
+// Standard Class Constructor
 Team :: Team ()
 {
     
 }
 
+// Returns the Team Matrix
 std::vector<std::vector<std::string>>
 Team :: getTeamMatrix ()
 {
     return team_matrix;
 }
 
+// TODO: Assign each of the rows of the matrix to vectors
 void
 Team :: setMatrixToVectors ()
 {
     
 }
 
+// Reads in a csv file and assigns the values to a matrix
 void
 Team :: setTeamMatrix (const std::string &filename)
 {
@@ -46,6 +50,8 @@ Team :: setTeamMatrix (const std::string &filename)
     }
 }
 
+// Returns a value at the given index to make sure the matrix
+// was read in correctly
 std::string
 Team :: testMatrix ()
 {
