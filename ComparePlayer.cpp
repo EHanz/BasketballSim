@@ -94,6 +94,8 @@ ComparePlayer :: comparePlayerSteals ()
     else { return 0; }
 }
 
+// Runs through the functions and keeps track who has better stats
+// in each of the categories
 int
 ComparePlayer :: playerHeadToHead ()
 {
