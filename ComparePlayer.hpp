@@ -26,8 +26,12 @@
 class ComparePlayer
 {
     public:
+        // Class Constructor and Deconstructor
+
         ComparePlayer ();
         ~ComparePlayer ();
+
+        // Class Functions
 
         // Make sure to set name in functions
         // for stat results and comparisons
@@ -68,6 +72,8 @@ class ComparePlayer
         testPlayerPointer (Player* p1, Player* p2);
 
     private:
+        // Class Variables
+
         // TODO: Find a better way to store stats than a ton of floats
         
         std::vector <float> player_one_stats;
