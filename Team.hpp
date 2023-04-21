@@ -16,8 +16,12 @@
 class Team
 {
     public:
+        // Class Constructor and Deconstructor
+
         Team ();
         ~Team ();
+
+        // Class Functions
 
         std::vector<std::vector<std::string>>
         getTeamMatrix ();
@@ -32,6 +36,8 @@ class Team
         testMatrix ();
     
     private:
+        // Class Variables
+
         std::vector<std::vector<std::string>> team_matrix;
 };
 
