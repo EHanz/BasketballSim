@@ -46,6 +46,8 @@ League :: getPlayerFromLeague (std::string playerName)
     {
         p_vector.push_back (league_matrix[p_index][j]);
     }
+    
+    std::cout << "********************************" << "\n";
 
     return p_vector;
 }
