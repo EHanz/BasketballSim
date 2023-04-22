@@ -48,6 +48,8 @@ Team :: setTeamMatrix (const std::string &filename)
 
         team_matrix.push_back (parsedRow);
     }
+
+    std::cout << "********************************" << "\n";
 }
 
 // Returns a value at the given index to make sure the matrix
@@ -55,5 +57,7 @@ Team :: setTeamMatrix (const std::string &filename)
 std::string
 Team :: testMatrix ()
 {
+    std::cout << "********************************" << "\n";
+
     return team_matrix[0][1];
 }
