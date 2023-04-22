@@ -93,6 +93,7 @@ Player :: setStatsFromLeagueMatrix (std::vector<std::string> playerVector)
 void
 Player :: printIndividualStats ()
 {
+    std::cout << "********************************" << "\n";
     // Output the player's stat line
     std :: cout << "Preparing Player Statistics..." << "\n";
     std :: cout << "\n";
@@ -126,4 +127,6 @@ Player :: printIndividualStats ()
     std :: cout << "\n";
     std :: cout << "\n";
     std :: cout << "\n";
+
+    std::cout << "********************************" << "\n";
 }
