@@ -155,6 +155,8 @@ ComparePlayer :: testPlayerPointer (Player *p1, Player *p2)
     p_one = p1;
     p_two = p2;
 
+    std::cout << "********************************" << "\n";
+
     std::cout << p_one -> playerName << "Assists: " << p_one -> assists << "\n";
     std::cout << p_two -> playerName << "Player Two Assists: " << p_two -> assists << "\n";
 }
