@@ -157,6 +157,9 @@ printComparePlayerMenu ()
     std::cout << "8. Exit Simulator " << "\n"; 
 
     std::cin >> option;
+
+    std::cout << "********************************" << "\n";
+    
     runComparePlayerOptions (option);
 }
 
@@ -211,6 +214,8 @@ runComparePlayerOptions (int option)
             break;
     }
 
+    std::cout << "********************************" << "\n";
+
     printComparePlayerMenu ();
 }
 
@@ -235,6 +240,9 @@ printMenuText ()
     std::cout << "9. Quit" << "\n";
 
     std::cin >> option;
+
+    std::cout << "********************************" << "\n";
+
     runMainMenuOptions (option);
 }
 
@@ -319,6 +327,8 @@ runMainMenuOptions (int option)
             std::cout << "That is not a valid option. Please choose again." << "\n";
             break;
     }
+
+    std::cout << "********************************" << "\n";
 
     printMenuText ();
 }
