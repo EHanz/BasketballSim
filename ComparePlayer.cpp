@@ -54,6 +54,29 @@ ComparePlayer :: comparePlayerBlocks ()
 }
 
 int
+ComparePlayer :: comparePlayerFreeThrowAttempts ()
+{
+    std::cout << player_one_name << " has: " << p_one -> freeThrowAttempts << "\n";
+    std::cout << player_two_name << " has: " << p_two -> freeThrowAttempts << "\n";
+
+    if (p_one -> freeThrowAttempts > p_two -> freeThrowAttempts) { return 1; }
+    else if (p_two -> freeThrowAttempts > p_one -> freeThrowAttempts) { return 2; }
+    else { return 0; }
+}
+
+int
+ComparePlayer :: comparePlayerFreeThrowMade ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerFreeThrowPercentage ()
+{
+
+}
+
+int
 ComparePlayer :: comparePlayerPPG ()
 {
     std::cout << player_one_name << " has: " << p_one -> ppg << "\n";
