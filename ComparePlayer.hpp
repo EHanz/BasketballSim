@@ -48,7 +48,7 @@ class ComparePlayer
         comparePlayerFreeThrowAttempts ();
 
         int
-        comparePlayerFreeThrowMade ();
+        comparePlayerFreeThrowsMade ();
 
         int
         comparePlayerFreeThrowPercentage ();
