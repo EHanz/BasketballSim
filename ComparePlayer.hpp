@@ -45,6 +45,21 @@ class ComparePlayer
         comparePlayerBlocks ();
 
         int
+        comparePlayerFreeThrowAttempts ();
+
+        int
+        comparePlayerFreeThrowMade ();
+
+        int
+        comparePlayerFreeThrowPercentage ();
+
+        int
+        comparePlayerGames ();
+
+        int
+        comparePlayerGamesStarted ();
+
+        int
         comparePlayerPPG ();
 
         int
