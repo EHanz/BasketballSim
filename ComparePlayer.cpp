@@ -87,6 +87,28 @@ ComparePlayer :: comparePlayerFreeThrowPercentage ()
 }
 
 int
+ComparePlayer :: comparePlayerGames ()
+{
+    std::cout << player_one_name << " has: " << p_one -> games << "\n";
+    std::cout << player_two_name << " has: " << p_two -> games << "\n";
+
+    if (p_one -> games > p_two -> games) { return 1; }
+    else if (p_two -> games > p_one -> games) { return 2; }
+    else { return 0; }
+}
+
+int
+ComparePlayer :: comparePlayerGameStarts ()
+{
+    std::cout << player_one_name << " has: " << p_one -> gameStarts << "\n";
+    std::cout << player_two_name << " has: " << p_two -> gameStarts << "\n";
+
+    if (p_one -> gameStarts > p_two -> gameStarts) { return 1; }
+    else if (p_two -> gameStarts > p_one -> gameStarts) { return 2; }
+    else { return 0; }
+}
+
+int
 ComparePlayer :: comparePlayerPPG ()
 {
     std::cout << player_one_name << " has: " << p_one -> ppg << "\n";
