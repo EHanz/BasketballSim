@@ -24,7 +24,7 @@ Player :: Player (int g, int gS, float mP, float fGM, float fGA, float fGP,
                  float eFGP, float fTM, float fTA, float fTP, float oR, 
                  float dR, float tR, float a, float s, float b, float t, float pF, float pPG)
 {
-
+    games = g;
 }
 
 // Returns the array of player stats
