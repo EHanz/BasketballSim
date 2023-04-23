@@ -65,15 +65,25 @@ ComparePlayer :: comparePlayerFreeThrowAttempts ()
 }
 
 int
-ComparePlayer :: comparePlayerFreeThrowMade ()
+ComparePlayer :: comparePlayerFreeThrowsMade ()
 {
+    std::cout << player_one_name << " has: " << p_one -> freeThrowsMade << "\n";
+    std::cout << player_two_name << " has: " << p_two -> freeThrowsMade << "\n";
 
+    if (p_one -> freeThrowsMade > p_two -> freeThrowsMade) { return 1; }
+    else if (p_two -> freeThrowsMade > p_one -> freeThrowsMade) { return 2; }
+    else { return 0; }
 }
 
 int
 ComparePlayer :: comparePlayerFreeThrowPercentage ()
 {
+    std::cout << player_one_name << " has: " << p_one -> freeThrowPct << "\n";
+    std::cout << player_two_name << " has: " << p_two -> freeThrowPct << "\n";
 
+    if (p_one -> freeThrowPct > p_two -> freeThrowPct) { return 1; }
+    else if (p_two -> freeThrowPct > p_one -> freeThrowPct) { return 2; }
+    else { return 0; }
 }
 
 int
