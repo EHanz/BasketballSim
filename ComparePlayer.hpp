@@ -57,7 +57,7 @@ class ComparePlayer
         comparePlayerGames ();
 
         int
-        comparePlayerGamesStarted ();
+        comparePlayerGameStarts ();
 
         int
         comparePlayerPPG ();
