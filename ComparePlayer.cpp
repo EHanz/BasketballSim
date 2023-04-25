@@ -27,7 +27,8 @@ ComparePlayer :: assignVecToFloats ()
     
 }
 
-// Trying ternary operator here...
+// Below are the series of stat comparison functions
+// Might try and find a way to do all of this within one function
 int
 ComparePlayer :: comparePlayerAssists ()
 {
