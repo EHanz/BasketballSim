@@ -86,6 +86,8 @@ int main ()
 
     // TODO: Please make a menu file! Very unorganized!
     // TODO: Also switch from if statement to switch statements!
+
+    // TODO: Rework the whole menu. V unorganized
     printMenuText ();
 }
 
