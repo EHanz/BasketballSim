@@ -52,6 +52,7 @@ League :: getPlayerFromLeague (std::string playerName)
     return p_vector;
 }
 
+// Returns a player from the league matrix
 std::vector <std::string>
 League :: getPlayerFromLeague (int index)
 {
@@ -110,6 +111,8 @@ League :: setLeagueMatrix (const std::string& filename)
 
 // TODO: Read in the matrix and set each row as a Player Object
 // That way all players are initialized at start
+// Find out if there is a quick way to initialize that many
+// Player Objects
 void
 League :: setPlayersFromMatrix ()
 {
