@@ -23,6 +23,8 @@ class Team
 
         // Class Functions
 
+        // TODO: Add Stat Comparisons
+
         std::vector<std::vector<std::string>>
         getTeamMatrix ();
 
