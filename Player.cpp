@@ -90,6 +90,8 @@ Player :: setStatsFromLeagueMatrix (std::vector<std::string> playerVector)
 }
 
 // Tests for player stats
+// TODO: Make this a regular call in the command line if the user wants
+// to view this
 void
 Player :: printIndividualStats ()
 {
