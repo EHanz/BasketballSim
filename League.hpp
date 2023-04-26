@@ -38,6 +38,9 @@ class League
         std::vector <std::string>
         getPlayerFromLeague (int index);
 
+        std::vector <Player>
+        getPlayersFromLeague ();
+
         int
         listPlayersInLeague ();
 
