@@ -45,7 +45,7 @@ class League
         setLeagueMatrix (const std::string& filename);
 
         void
-        setPlayersFromMatrix ();
+        setPlayersFromMatrix (const std::string& filename);
 
         void
         sortPlayersByName ();
