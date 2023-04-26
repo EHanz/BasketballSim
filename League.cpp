@@ -68,6 +68,12 @@ League :: getPlayerFromLeague (int index)
     return p_vector;
 }
 
+std::vector <Player>
+League :: getPlayersFromLeague ()
+{
+    return players;
+}
+
 // TODO: List all the players in the league
 // in an ORGANIZED fashion
 int
@@ -118,7 +124,7 @@ League :: setPlayersFromMatrix (const std::string& filename)
 {
     // Still a work in progress
     // Figure out how to take vec and assign to class object
-    
+
     std::ifstream data (filename);
     std::string line;
 
