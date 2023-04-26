@@ -114,9 +114,25 @@ League :: setLeagueMatrix (const std::string& filename)
 // Find out if there is a quick way to initialize that many
 // Player Objects
 void
-League :: setPlayersFromMatrix ()
+League :: setPlayersFromMatrix (const std::string& filename)
 {
+    std::ifstream data (filename);
+    std::string line;
 
+    std::cout << "Loading League Matrix..." << std::endl;
+
+    while (std::getline (data,line))
+    {
+        std::stringstream lineStream (line);
+        std::string cell;
+        std::vector <std::string> parsedRow;
+        while(std::getline (lineStream,cell,','))
+        {
+            parsedRow.push_back (cell);
+        }
+
+        league_matrix.push_back (parsedRow);
+    }
 }
 
 // TODO: Sort the Players by their name, alphabetically
