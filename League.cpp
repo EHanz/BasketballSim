@@ -116,6 +116,9 @@ League :: setLeagueMatrix (const std::string& filename)
 void
 League :: setPlayersFromMatrix (const std::string& filename)
 {
+    // Still a work in progress
+    // Figure out how to take vec and assign to class object
+    
     std::ifstream data (filename);
     std::string line;
 
