@@ -57,7 +57,6 @@ class Player
         // Class Variables
 
         // TODO: find a better way to store all these stats
-        // Too many vars for one class
         std::vector <float> p_stats;
 
 };
