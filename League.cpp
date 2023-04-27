@@ -68,6 +68,7 @@ League :: getPlayerFromLeague (int index)
     return p_vector;
 }
 
+// Returns the vector of Player objects
 std::vector <Player>
 League :: getPlayersFromLeague ()
 {
