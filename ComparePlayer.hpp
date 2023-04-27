@@ -33,8 +33,6 @@ class ComparePlayer
 
         // Class Functions
 
-        // Make sure to set name in functions
-        // for stat results and comparisons
         void
         assignVecToFloats ();
 
