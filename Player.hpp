@@ -46,6 +46,7 @@ class Player
         void
         setStatsFromLeagueMatrix (std::vector <std::string> playerVector);
 
+        // TODO: find ways to use less globals
         std::string playerName;
         int games, gameStarts;
         float minutesPlayed, fieldGoalsMade, fieldGoalAttempts, fieldGoalPct,
