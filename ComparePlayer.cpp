@@ -20,7 +20,7 @@ ComparePlayer :: ComparePlayer ()
 }
 
 // Might use this to assign the vector values to individual floats
-// To be determined...
+// Might not need this...
 void
 ComparePlayer :: assignVecToFloats ()
 {
