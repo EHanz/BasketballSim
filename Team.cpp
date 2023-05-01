@@ -49,6 +49,8 @@ Team :: setTeamMatrix (const std::string &filename)
         team_matrix.push_back (parsedRow);
     }
 
+    std::cout << team_matrix[1][1];
+
     std::cout << "********************************" << "\n";
 }
 
