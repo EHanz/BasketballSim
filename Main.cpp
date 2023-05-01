@@ -19,7 +19,7 @@
 #include "Team.hpp"
 
 /***************************************************************/
-// Class Pointers and other vars
+// Class Pointers and other vars for driver components
 
 ComparePlayer* s_compare_player;
 League* s_league;
