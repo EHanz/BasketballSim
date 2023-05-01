@@ -36,6 +36,8 @@ class ComparePlayer
         void
         assignVecToFloats ();
 
+        // Maybe find a way to compare stats using less functions
+
         int
         comparePlayerAssists ();
 
