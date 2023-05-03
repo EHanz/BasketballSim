@@ -82,7 +82,7 @@ int main ()
     // TODO: implement league player csv file and find a good way to
     // navigate something that large besides vec matrix
 
-    testLeagueClass ();
+    //testLeagueClass ();
 
     // TODO: Please make a menu file! Very unorganized!
     printMenuText ();
@@ -264,7 +264,7 @@ runMainMenuOptions (int option)
         case 1:
             player_one_vec.clear ();
             
-            std::cout << "What is the name of Player 1?" << "\n";
+            std::cout << "Player 1 Name: " << "\n";
             std::cin.ignore ();
             std::getline (std::cin, playerOneName);
 
@@ -279,7 +279,7 @@ runMainMenuOptions (int option)
             break;
         case 2:
             player_two_vec.clear ();
-            std::cout << "What is the name of Player 2?" << "\n";
+            std::cout << "Player 2 Name: " << "\n";
             std::cin.ignore ();
             std::getline (std::cin, playerTwoName);
             player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
