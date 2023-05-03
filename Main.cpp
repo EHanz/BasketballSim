@@ -105,6 +105,7 @@ init ()
     const std::string leagueFilename = "League.csv";
     const std::string teamFilename = "SixersTeam.csv";
 
+    std::cout << "********************************" << "\n";
     std::cout << "Welcome to the Basketball Simulator!" << "\n";
 
     // Boots up the matrix of all players in the league
