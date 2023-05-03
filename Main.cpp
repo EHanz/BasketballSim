@@ -150,11 +150,13 @@ printComparePlayerMenu ()
     std::cout << "1. Better Stats " << "\n";
     std::cout << "2. More Assists " << "\n";
     std::cout << "3. More Blocks " << "\n";
-    std::cout << "4. More PPG " << "\n";
-    std::cout << "5. More Rebounds " << "\n";
-    std::cout << "6. More Steals " << "\n";
-    std::cout << "7. Main Menu " << "\n";
-    std::cout << "8. Exit Simulator " << "\n"; 
+    std::cout << "4. More Free Throws " << "\n";
+    std::cout << "5. More Games Played " << "\n";
+    std::cout << "6. More PPG " << "\n";
+    std::cout << "7. More Rebounds " << "\n";
+    std::cout << "8. More Steals " << "\n";
+    std::cout << "9. Main Menu " << "\n";
+    std::cout << "10. Exit Simulator " << "\n"; 
 
     std::cin >> option;
 
@@ -190,24 +192,28 @@ runComparePlayerOptions (int option)
             headToHeadResults (result);
             break;
         case 4:
+            std::cout << "Comparing Free Throws Per Game..." << "\n";
+        case 5:
+            std::cout << "Comparing Games Played..." << "\n";
+        case 6:
             std::cout << "Comparing Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerPPG ();
             headToHeadResults (result);
             break;
-        case 5:
+        case 7:
             std::cout << "Comparing Rebounds Per Game..." << "\n";
             result = s_compare_player -> comparePlayerRebounds ();
             headToHeadResults (result);
             break;
-        case 6:
+        case 8:
             std::cout << "Comparing Steals Per Game..." << "\n";
             result = s_compare_player -> comparePlayerSteals ();
             headToHeadResults (result);
             break;
-        case 7:
+        case 9:
             printMenuText ();
             break;
-        case 8:
+        case 10:
             exit (0);
         default:
             std::cout << "That is not a valid option..." << "\n";
