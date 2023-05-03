@@ -193,8 +193,14 @@ runComparePlayerOptions (int option)
             break;
         case 4:
             std::cout << "Comparing Free Throws Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerFreeThrowsMade ();
+            headToHeadResults (result);
+            break;
         case 5:
             std::cout << "Comparing Games Played..." << "\n";
+            result = s_compare_player -> comparePlayerGames ();
+            headToHeadResults (result);
+            break;
         case 6:
             std::cout << "Comparing Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerPPG ();
