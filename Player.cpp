@@ -28,6 +28,11 @@ Player :: Player (int g, int gS, float mP, float fGM, float fGA, float fGP,
     games = g;
 }
 
+Player :: ~Player ()
+{
+    
+}
+
 // Returns the array of player stats
 std::vector <float>
 Player :: getPlayerStats () { return p_stats; }
