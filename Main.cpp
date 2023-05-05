@@ -208,7 +208,7 @@ runComparePlayerOptions (int option)
             break;
         case 7:
             std::cout << "Comparing Rebounds Per Game..." << "\n";
-            result = s_compare_player -> comparePlayerRebounds ();
+            result = s_compare_player -> comparePlayerTotalRebounds ();
             headToHeadResults (result);
             break;
         case 8:
