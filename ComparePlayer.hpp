@@ -63,7 +63,13 @@ class ComparePlayer
         comparePlayerPPG ();
 
         int
-        comparePlayerRebounds ();
+        comparePlayerOffensiveRebounds ();
+
+        int
+        comparePlayerDefensiveRebounds ();
+
+        int
+        comparePlayerTotalRebounds ();
 
         int
         comparePlayerStat (int index);
