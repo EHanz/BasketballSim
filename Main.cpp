@@ -240,14 +240,15 @@ printMenuText ()
     int option = 0;
     
     std::cout << "********************************" << "\n";
+
     std::cout << "Would you like to: " << "\n";
     std::cout << "1. Load Player 1 for Sim" << "\n";
     std::cout << "2. Load Player 2 for Sim" << "\n";
     std::cout << "3. Add Player 1 from List: " << "\n";
     std::cout << "4. Add Player 2 from List: " << "\n";
     std::cout << "5. Compare the two players" << "\n";
-    std::cout << "6. View " << playerOneName << " Stats" << "\n";
-    std::cout << "7. View " << playerTwoName << " Stats" << "\n";
+    std::cout << "6. View Player One: " << playerOneName << " Stats" << "\n";
+    std::cout << "7. View Player Two: " << playerTwoName << " Stats" << "\n";
     std::cout << "8. Clear Player Slots" << "\n";
     std::cout << "9. Quit" << "\n";
 
@@ -349,7 +350,7 @@ runMainMenuOptions (int option)
         default:
             std::cout << "That is not a valid option. Please choose again." << "\n";
             break;
-            
+
     }
 
     std::cout << "********************************" << "\n";
