@@ -121,7 +121,29 @@ ComparePlayer :: comparePlayerPPG ()
 }
 
 int
-ComparePlayer :: comparePlayerRebounds ()
+ComparePlayer :: comparePlayerOffensiveRebounds ()
+{
+    std::cout << player_one_name << " has: " << p_one -> offReb << "\n";
+    std::cout << player_two_name << " has: " << p_two -> offReb << "\n";
+
+    if (player_one_stats[16] > player_two_stats[16]) { return 1; }
+    else if (player_two_stats[16] > player_one_stats[16]) { return 2; }
+    else { return 0; }
+}
+
+int
+ComparePlayer :: comparePlayerDefensiveRebounds ()
+{
+    std::cout << player_one_name << " has: " << p_one -> ppg << "\n";
+    std::cout << player_two_name << " has: " << p_two -> ppg << "\n";
+
+    if (player_one_stats[17] > player_two_stats[17]) { return 1; }
+    else if (player_two_stats[17] > player_one_stats[17]) { return 2; }
+    else { return 0; }
+}
+
+int
+ComparePlayer :: comparePlayerTotalRebounds ()
 {
     std::cout << player_one_name << " has: " << p_one -> totalReb << "\n";
     std::cout << player_two_name << " has: " << p_two -> totalReb << "\n";
@@ -160,7 +182,7 @@ ComparePlayer :: playerHeadToHead ()
     if (comparePlayerAssists() == 1) { pOneTotal++; } else if (comparePlayerAssists() == 2) { pTwoTotal++; }
     if (comparePlayerBlocks () == 1) { pOneTotal++; } else if (comparePlayerBlocks () == 2) { pTwoTotal++; }
     if (comparePlayerPPG () == 1) { pOneTotal++; } else if (comparePlayerPPG () == 2) { pTwoTotal++; }
-    if (comparePlayerRebounds () == 1) { pOneTotal++; } else if (comparePlayerRebounds () == 2) { pTwoTotal++; }
+    if (comparePlayerTotalRebounds () == 1) { pOneTotal++; } else if (comparePlayerTotalRebounds () == 2) { pTwoTotal++; }
     if (comparePlayerSteals () == 1) { pOneTotal++; } else if (comparePlayerSteals () == 2) { pTwoTotal++; }
     if (pOneTotal > pTwoTotal) { return 1; } else if (pTwoTotal > pOneTotal) { return 2;}  else { return 0; }
 }
