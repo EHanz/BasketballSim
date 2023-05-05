@@ -289,6 +289,7 @@ runMainMenuOptions (int option)
             test_player = s_player_one -> getPlayerStats ();
             std::cout << test_player[2] << "\n";
             break;
+
         case 2:
             player_two_vec.clear ();
             std::cout << "Player 2 Name: " << "\n";
@@ -297,6 +298,7 @@ runMainMenuOptions (int option)
             player_two_vec = s_league -> getPlayerFromLeague (playerTwoName);
             setPlayerClass (s_player_two, player_two_vec);
             break;
+
         case 3:
             player_one_vec.clear ();
             index = s_league -> listPlayersInLeague ();
@@ -304,6 +306,7 @@ runMainMenuOptions (int option)
             setPlayerClass (s_player_one, player_one_vec);
             playerOneName = s_player_one -> playerName;
             break;
+
         case 4:
             player_two_vec.clear ();
             index = s_league -> listPlayersInLeague ();
@@ -311,6 +314,7 @@ runMainMenuOptions (int option)
             setPlayerClass (s_player_two, player_two_vec);
             playerTwoName = s_player_two -> playerName;
             break;
+
         case 5:
             std::cout << "Comparing: " << playerOneName << " to " << playerTwoName << "..." << "\n";
             // Compare Player Options
@@ -318,13 +322,17 @@ runMainMenuOptions (int option)
             // Print the Compare Player Menu Options
             printComparePlayerMenu ();
             break;
+
         case 6:
             std::cout << "Viewing: " << playerOneName << " Stats " << "\n";
             s_player_one -> printIndividualStats ();
+            break;
+
         case 7:
             std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
             s_player_two -> getPlayerStats ();
             break;
+
         case 8:
             std::cout << "Erasing: " << playerOneName << " and " << playerTwoName << "\n";
             playerOneName = "";
@@ -332,12 +340,16 @@ runMainMenuOptions (int option)
             player_one_vec.clear ();
             player_two_vec.clear ();
             break;
+
         case 9:
             std::cout << "Exiting the simulator..." << "\n";
             exit (0);
+            break;
+
         default:
             std::cout << "That is not a valid option. Please choose again." << "\n";
             break;
+            
     }
 
     std::cout << "********************************" << "\n";
