@@ -13,6 +13,11 @@ Team :: Team ()
     
 }
 
+Team :: ~Team ()
+{
+    
+}
+
 // Returns the Team Matrix
 std::vector<std::vector<std::string>>
 Team :: getTeamMatrix ()
