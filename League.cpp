@@ -18,6 +18,11 @@ League :: League ()
     // Might move setLeagueMatrix function call here
 }
 
+League :: ~League ()
+{
+    
+}
+
 // Returns the matrix of all players in the league
 std::vector <std::vector <std::string>>
 League :: getLeagueMatrix () { return league_matrix; }
