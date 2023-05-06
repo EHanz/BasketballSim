@@ -19,6 +19,11 @@ ComparePlayer :: ComparePlayer ()
   
 }
 
+ComparePlayer :: ~ComparePlayer ()
+{
+    
+}
+
 // Might use this to assign the vector values to individual floats
 // Might not need this...
 void
