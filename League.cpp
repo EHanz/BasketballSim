@@ -18,9 +18,10 @@ League :: League ()
     // Might move setLeagueMatrix function call here
 }
 
+// Destructor for League Class
 League :: ~League ()
 {
-    
+
 }
 
 // Returns the matrix of all players in the league
