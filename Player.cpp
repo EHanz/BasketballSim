@@ -28,6 +28,7 @@ Player :: Player (int g, int gS, float mP, float fGM, float fGA, float fGP,
     games = g;
 }
 
+// Destructor for Player Class
 Player :: ~Player ()
 {
     
