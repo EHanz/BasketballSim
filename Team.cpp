@@ -13,9 +13,10 @@ Team :: Team ()
     
 }
 
+// Destructor for Team Class
 Team :: ~Team ()
 {
-    
+
 }
 
 // Returns the Team Matrix
