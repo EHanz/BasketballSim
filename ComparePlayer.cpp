@@ -19,9 +19,10 @@ ComparePlayer :: ComparePlayer ()
   
 }
 
+// Destructor for Compare Player Class
 ComparePlayer :: ~ComparePlayer ()
 {
-    
+
 }
 
 // Might use this to assign the vector values to individual floats
