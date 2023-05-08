@@ -66,9 +66,6 @@ class ComparePlayer
         comparePlayerGameStarts ();
 
         int
-        comparePlayerGamesPlayed ();
-
-        int
         comparePlayerMinutesPlayed ();
 
         int
