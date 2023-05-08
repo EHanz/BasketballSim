@@ -193,6 +193,13 @@ ComparePlayer :: playerHeadToHead ()
     if (pOneTotal > pTwoTotal) { return 1; } else if (pTwoTotal > pOneTotal) { return 2;}  else { return 0; }
 }
 
+// Take the stats and tally them to determine the winner
+int
+ComparePlayer :: comparePlayerTally ()
+{
+    
+}
+
 // Sets the stats of Player One only
 void
 ComparePlayer :: setPlayerOneStats (Player* p1, std::string playerOneName)
