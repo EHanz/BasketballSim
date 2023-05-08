@@ -45,6 +45,9 @@ class ComparePlayer
         comparePlayerBlocks ();
 
         int
+        comparePlayerFieldGoalPct ();
+
+        int
         comparePlayerFreeThrowAttempts ();
 
         int
@@ -76,6 +79,21 @@ class ComparePlayer
 
         int
         comparePlayerSteals ();
+
+        int
+        comparePlayerThreePointMade ();
+
+        int
+        comparePlayerThreePointPct ();
+
+        int
+        comparePlayerTurnovers ();
+
+        int
+        comparePlayerTwoPointMade ();
+
+        int
+        comparePlayerTwoPointPct ();
 
         int
         playerHeadToHead ();
