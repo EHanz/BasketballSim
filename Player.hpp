@@ -41,6 +41,9 @@ class Player
         printIndividualStats ();
 
         void
+        setAdvancedStats ();
+
+        void
         setIndividualStats ();
 
         void
