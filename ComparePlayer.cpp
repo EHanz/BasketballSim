@@ -61,6 +61,18 @@ ComparePlayer :: comparePlayerBlocks ()
 }
 
 int
+ComparePlayer :: comparePlayerEstFGPct ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerFieldGoalPct ()
+{
+
+}
+
+int
 ComparePlayer :: comparePlayerFreeThrowAttempts ()
 {
     std::cout << player_one_name << " has: " << p_one -> freeThrowAttempts << "\n";
@@ -116,6 +128,12 @@ ComparePlayer :: comparePlayerGameStarts ()
 }
 
 int
+ComparePlayer :: comparePlayerMinutesPlayed ()
+{
+
+}
+
+int
 ComparePlayer :: comparePlayerPPG ()
 {
     std::cout << player_one_name << " has: " << p_one -> ppg << "\n";
@@ -124,6 +142,12 @@ ComparePlayer :: comparePlayerPPG ()
     if (player_one_stats[24] > player_two_stats[24]) { return 1; }
     else if (player_two_stats[24] > player_one_stats[24]) { return 2; }
     else { return 0; }
+}
+
+int
+ComparePlayer :: comparePlayerPersonalFouls ()
+{
+
 }
 
 int
@@ -178,6 +202,48 @@ ComparePlayer :: comparePlayerSteals ()
     else { return 0; }
 }
 
+int
+ComparePlayer :: comparePlayerThreePointAttempts ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerThreePointMade ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerThreePointPct ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerTurnovers ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerTwoPointAttempts ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerTwoPointMade ()
+{
+
+}
+
+int
+ComparePlayer :: comparePlayerTwoPointPct ()
+{
+    
+}
+
 // Runs through the functions and keeps track who has better stats
 // in each of the categories
 int
@@ -197,7 +263,7 @@ ComparePlayer :: playerHeadToHead ()
 int
 ComparePlayer :: comparePlayerTally ()
 {
-    
+
 }
 
 // Sets the stats of Player One only
