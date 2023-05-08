@@ -80,6 +80,9 @@ class ComparePlayer
         int
         playerHeadToHead ();
 
+        int
+        comparePlayerTally ();
+
         void
         setPlayerOneStats (Player* p1, std::string playerOneName);
 
