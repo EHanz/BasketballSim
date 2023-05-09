@@ -162,7 +162,12 @@ ComparePlayer :: comparePlayerPPG ()
 int
 ComparePlayer :: comparePlayerPersonalFouls ()
 {
+    std::cout << player_one_name << " has: " << p_one -> personalFouls << "\n";
+    std::cout << player_two_name << " has: " << p_two -> personalFouls << "\n";
 
+    if (player_one_stats[23] > player_two_stats[23]) { return 1; }
+    else if (player_two_stats[23] > player_one_stats[23]) { return 2; }
+    else { return 0; }
 }
 
 int
