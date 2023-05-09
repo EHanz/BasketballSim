@@ -258,13 +258,18 @@ ComparePlayer :: comparePlayerThreePointPct ()
 int
 ComparePlayer :: comparePlayerTurnovers ()
 {
+    std::cout << player_one_name << " has: " << p_one -> turnovers << "\n";
+    std::cout << player_two_name << " has: " << p_two -> turnovers << "\n";
 
+    if (player_one_stats[22] > player_two_stats[22]) { return 1; }
+    else if (player_two_stats[22] > player_one_stats[22]) { return 2; }
+    else { return 0; }
 }
 
 int
 ComparePlayer :: comparePlayerTwoPointAttempts ()
 {
-
+    
 }
 
 int
