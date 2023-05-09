@@ -140,7 +140,12 @@ ComparePlayer :: comparePlayerGameStarts ()
 int
 ComparePlayer :: comparePlayerMinutesPlayed ()
 {
+    std::cout << player_one_name << " has: " << p_one -> minutesPlayed << "\n";
+    std::cout << player_two_name << " has: " << p_two -> minutesPlayed << "\n";
 
+    if (player_one_stats[2] > player_two_stats[2]) { return 1; }
+    else if (player_two_stats[2] > player_one_stats[2]) { return 2; }
+    else { return 0; }
 }
 
 int
