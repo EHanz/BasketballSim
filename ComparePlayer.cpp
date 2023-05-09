@@ -74,7 +74,12 @@ ComparePlayer :: comparePlayerEstFGPct ()
 int
 ComparePlayer :: comparePlayerFieldGoalPct ()
 {
+    std::cout << player_one_name << " has: " << p_one -> fieldGoalPct << "\n";
+    std::cout << player_two_name << " has: " << p_two -> fieldGoalPct << "\n";
 
+    if (player_one_stats[5] > player_two_stats[5]) { return 1; }
+    else if (player_two_stats[5] > player_one_stats[5]) { return 2; }
+    else { return 0; }
 }
 
 int
