@@ -225,19 +225,34 @@ ComparePlayer :: comparePlayerSteals ()
 int
 ComparePlayer :: comparePlayerThreePointAttempts ()
 {
+    std::cout << player_one_name << " has: " << p_one -> threePtAttempts << "\n";
+    std::cout << player_two_name << " has: " << p_two -> threePtAttempts << "\n";
 
+    if (player_one_stats[7] > player_two_stats[7]) { return 1; }
+    else if (player_two_stats[7] > player_one_stats[7]) { return 2; }
+    else { return 0; }
 }
 
 int
 ComparePlayer :: comparePlayerThreePointMade ()
 {
+    std::cout << player_one_name << " has: " << p_one -> threePtMade << "\n";
+    std::cout << player_two_name << " has: " << p_two -> threePtMade << "\n";
 
+    if (player_one_stats[6] > player_two_stats[6]) { return 1; }
+    else if (player_two_stats[6] > player_one_stats[6]) { return 2; }
+    else { return 0; }
 }
 
 int
 ComparePlayer :: comparePlayerThreePointPct ()
 {
+    std::cout << player_one_name << " has: " << p_one -> threePtPct << "\n";
+    std::cout << player_two_name << " has: " << p_two -> threePtPct << "\n";
 
+    if (player_one_stats[8] > player_two_stats[8]) { return 1; }
+    else if (player_two_stats[8] > player_one_stats[8]) { return 2; }
+    else { return 0; }
 }
 
 int
