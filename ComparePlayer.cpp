@@ -280,7 +280,12 @@ ComparePlayer :: comparePlayerTwoPointAttempts ()
 int
 ComparePlayer :: comparePlayerTwoPointMade ()
 {
+    std::cout << player_one_name << " has: " << p_one -> twoPtMade << "\n";
+    std::cout << player_two_name << " has: " << p_two -> twoPtMade << "\n";
 
+    if (player_one_stats[9] > player_two_stats[9]) { return 1; }
+    else if (player_two_stats[9] > player_one_stats[9]) { return 2; }
+    else { return 0; }
 }
 
 int
