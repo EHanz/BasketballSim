@@ -63,7 +63,12 @@ ComparePlayer :: comparePlayerBlocks ()
 int
 ComparePlayer :: comparePlayerEstFGPct ()
 {
+    std::cout << player_one_name << " has: " << p_one -> estFgPct << "\n";
+    std::cout << player_two_name << " has: " << p_two -> estFgPct << "\n";
 
+    if (player_one_stats[12] > player_two_stats[12]) { return 1; }
+    else if (player_two_stats[12] > player_one_stats[12]) { return 2; }
+    else { return 0; }
 }
 
 int
@@ -263,7 +268,9 @@ ComparePlayer :: playerHeadToHead ()
 int
 ComparePlayer :: comparePlayerTally ()
 {
+    int tally = 0;
 
+    return tally;
 }
 
 // Sets the stats of Player One only
