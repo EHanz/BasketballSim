@@ -269,7 +269,12 @@ ComparePlayer :: comparePlayerTurnovers ()
 int
 ComparePlayer :: comparePlayerTwoPointAttempts ()
 {
-    
+    std::cout << player_one_name << " has: " << p_one -> twoPtAttempts << "\n";
+    std::cout << player_two_name << " has: " << p_two -> twoPtAttempts << "\n";
+
+    if (player_one_stats[10] > player_two_stats[10]) { return 1; }
+    else if (player_two_stats[10] > player_one_stats[10]) { return 2; }
+    else { return 0; }
 }
 
 int
