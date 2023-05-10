@@ -331,7 +331,7 @@ runMainMenuOptions (int option)
 
         case 7:
             std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
-            s_player_two -> getPlayerStats ();
+            s_player_two -> printIndividualStats ();
             break;
 
         case 8:
