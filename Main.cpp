@@ -112,7 +112,7 @@ init ()
     s_league -> setLeagueMatrix (leagueFilename);
 
     // Boots up the matrix of the Sixers Team
-    s_team -> setTeamMatrix (teamFilename);
+    //s_team -> setTeamMatrix (teamFilename);
 }
 
 // Puts both players in a head to head matchup
