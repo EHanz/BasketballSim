@@ -291,7 +291,12 @@ ComparePlayer :: comparePlayerTwoPointMade ()
 int
 ComparePlayer :: comparePlayerTwoPointPct ()
 {
-    
+    std::cout << player_one_name << " has: " << p_one -> twoPtPct << "\n";
+    std::cout << player_two_name << " has: " << p_two -> twoPtPct << "\n";
+
+    if (player_one_stats[11] > player_two_stats[11]) { return 1; }
+    else if (player_two_stats[11] > player_one_stats[11]) { return 2; }
+    else { return 0; }
 }
 
 // Runs through the functions and keeps track who has better stats
