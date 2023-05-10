@@ -77,7 +77,7 @@ int main ()
     // TODO: Find where the csv files are for individual teams
     // and the player stats per game
 
-    //testTeamClass ();
+    testTeamClass ();
 
     // TODO: implement league player csv file and find a good way to
     // navigate something that large besides vec matrix
