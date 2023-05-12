@@ -195,6 +195,10 @@ runComparePlayerOptions (int option)
             std::cout << "Comparing Free Throws Per Game..." << "\n";
             result = s_compare_player -> comparePlayerFreeThrowsMade ();
             headToHeadResults (result);
+            result = s_compare_player -> comparePlayerFreeThrowAttempts ();
+            headToHeadResults (result);
+            result = s_compare_player -> comparePlayerFreeThrowPercentage ();
+            headToHeadResults (result);
             break;
         case 5:
             std::cout << "Comparing Games Played..." << "\n";
