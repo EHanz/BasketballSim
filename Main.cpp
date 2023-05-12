@@ -39,7 +39,7 @@ void
 init ();
 
 void
-headToHeadResults (int);
+headToHeadResults (int, std::string);
 
 void
 printComparePlayerMenu ();
@@ -118,15 +118,15 @@ init ()
 // Puts both players in a head to head matchup
 // Player wins if they win in more categories
 void
-headToHeadResults (int result)
+headToHeadResults (int result, std::string statName)
 {
     if (result == 1) 
     {
-        std::cout << playerOneName << " won the matchup!" << "\n";
+        std::cout << playerOneName << " won the " << statName << "matchup!" << "\n";
     } 
     else if (result == 2) 
     {
-        std::cout << playerTwoName << " won the matchup!" << "\n";
+        std::cout << playerTwoName << " won the " << statName << "matchup!" << "\n";
     } 
     else 
     {
@@ -179,7 +179,7 @@ runComparePlayerOptions (int option)
         case 1:
             std::cout << "Player stat head to head..." << "\n";
             result = s_compare_player -> playerHeadToHead ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Head to Head ");
             break;
         case 2:
             std::cout << "Comparing Assists Per Game..." << "\n";
@@ -203,6 +203,8 @@ runComparePlayerOptions (int option)
         case 5:
             std::cout << "Comparing Games Played..." << "\n";
             result = s_compare_player -> comparePlayerGames ();
+            headToHeadResults (result);
+            result = s_compare_player -> comparePlayerGameStarts ();
             headToHeadResults (result);
             break;
         case 6:
