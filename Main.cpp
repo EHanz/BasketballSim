@@ -184,49 +184,50 @@ runComparePlayerOptions (int option)
         case 2:
             std::cout << "Comparing Assists Per Game..." << "\n";
             result = s_compare_player -> comparePlayerAssists ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Assists");
             break;
         case 3:
             std::cout << "Comparing Blocks Per Game..." << "\n";
             result = s_compare_player -> comparePlayerBlocks ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Blocks");
             break;
         case 4:
             std::cout << "Comparing Free Throws Per Game..." << "\n";
             result = s_compare_player -> comparePlayerFreeThrowsMade ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Free Throws Made");
             result = s_compare_player -> comparePlayerFreeThrowAttempts ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Free Throw Attempts");
             result = s_compare_player -> comparePlayerFreeThrowPercentage ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Free Throw Percentage");
             break;
         case 5:
             std::cout << "Comparing Games Played..." << "\n";
             result = s_compare_player -> comparePlayerGames ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Games Played");
             result = s_compare_player -> comparePlayerGameStarts ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Games Started");
             break;
         case 6:
             std::cout << "Comparing Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerPPG ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Points Per Game");
             break;
         case 7:
             std::cout << "Comparing Rebounds Per Game..." << "\n";
             result = s_compare_player -> comparePlayerTotalRebounds ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Total Rebounds Per Game");
             break;
         case 8:
             std::cout << "Comparing Steals Per Game..." << "\n";
             result = s_compare_player -> comparePlayerSteals ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Steals Per Game");
             break;
         case 9:
             printMenuText ();
             break;
         case 10:
             exit (0);
+            break;
         default:
             std::cout << "That is not a valid option..." << "\n";
             break;
