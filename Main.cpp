@@ -216,6 +216,10 @@ runComparePlayerOptions (int option)
             std::cout << "Comparing Rebounds Per Game..." << "\n";
             result = s_compare_player -> comparePlayerTotalRebounds ();
             headToHeadResults (result, "Total Rebounds Per Game");
+            result = s_compare_player -> comparePlayerOffensiveRebounds ();
+            headToHeadResults (result, "Offensive Rebounds Per Game");
+            result = s_compare_player -> comparePlayerDefensiveRebounds ();
+            headToHeadResults (result, "Defensive Rebounds Per Game");
             break;
         case 8:
             std::cout << "Comparing Steals Per Game..." << "\n";
