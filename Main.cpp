@@ -153,10 +153,12 @@ printComparePlayerMenu ()
     std::cout << "4. More Free Throws " << "\n";
     std::cout << "5. More Games Played " << "\n";
     std::cout << "6. More PPG " << "\n";
-    std::cout << "7. More Rebounds " << "\n";
-    std::cout << "8. More Steals " << "\n";
-    std::cout << "9. Main Menu " << "\n";
-    std::cout << "10. Exit Simulator " << "\n"; 
+    std::cout << "7. Two Points Per Game " << "\n";
+    std::cout << "8. Three Points Per Game " << "\n";
+    std::cout << "9. More Rebounds " << "\n";
+    std::cout << "10. More Steals " << "\n";
+    std::cout << "11. Main Menu " << "\n";
+    std::cout << "12. Exit Simulator " << "\n"; 
 
     std::cin >> option;
 
@@ -194,11 +196,11 @@ runComparePlayerOptions (int option)
         case 4:
             std::cout << "Comparing Free Throws Per Game..." << "\n";
             result = s_compare_player -> comparePlayerFreeThrowsMade ();
-            headToHeadResults (result, "Free Throws Made");
+            headToHeadResults (result, "Free Throws Made Per Game");
             result = s_compare_player -> comparePlayerFreeThrowAttempts ();
-            headToHeadResults (result, "Free Throw Attempts");
+            headToHeadResults (result, "Free Throw Attempts Per Game");
             result = s_compare_player -> comparePlayerFreeThrowPercentage ();
-            headToHeadResults (result, "Free Throw Percentage");
+            headToHeadResults (result, "Free Throw Percentage Per Game");
             break;
         case 5:
             std::cout << "Comparing Games Played..." << "\n";
@@ -213,6 +215,19 @@ runComparePlayerOptions (int option)
             headToHeadResults (result, "Points Per Game");
             break;
         case 7:
+            std::cout << "Comparing Two Points Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerTwoPointMade ();
+            headToHeadResults (result, "Two Points Made Per Game");
+            result = s_compare_player -> comparePlayerTwoPointAttempts ();
+            headToHeadResults (result, "Two Point Attempts Per Game");
+            result = s_compare_player -> comparePlayerTwoPointPct ();
+            headToHeadResults (result, "Two Point Percentage");
+            break;
+
+        case 8:
+
+
+        case 9:
             std::cout << "Comparing Rebounds Per Game..." << "\n";
             result = s_compare_player -> comparePlayerTotalRebounds ();
             headToHeadResults (result, "Total Rebounds Per Game");
@@ -221,15 +236,15 @@ runComparePlayerOptions (int option)
             result = s_compare_player -> comparePlayerDefensiveRebounds ();
             headToHeadResults (result, "Defensive Rebounds Per Game");
             break;
-        case 8:
+        case 10:
             std::cout << "Comparing Steals Per Game..." << "\n";
             result = s_compare_player -> comparePlayerSteals ();
             headToHeadResults (result, "Steals Per Game");
             break;
-        case 9:
+        case 11:
             printMenuText ();
             break;
-        case 10:
+        case 12:
             exit (0);
             break;
         default:
