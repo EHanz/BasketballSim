@@ -223,10 +223,15 @@ runComparePlayerOptions (int option)
             result = s_compare_player -> comparePlayerTwoPointPct ();
             headToHeadResults (result, "Two Point Percentage");
             break;
-
         case 8:
-
-
+            std::cout << "Comparing Three Points Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerThreePointMade ();
+            headToHeadResults (result, "Three Points Made Per Game");
+            result = s_compare_player -> comparePlayerThreePointAttempts ();
+            headToHeadResults (result, "Three Point Attempts Per Game");
+            result = s_compare_player -> comparePlayerThreePointPct ();
+            headToHeadResults (result, "Three Point Percentage");
+            break;
         case 9:
             std::cout << "Comparing Rebounds Per Game..." << "\n";
             result = s_compare_player -> comparePlayerTotalRebounds ();
