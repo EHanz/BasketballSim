@@ -175,7 +175,6 @@ runComparePlayerOptions (int option)
 
     std::cout << "********************************" << "\n";
 
-    // Testing the switch/case statement
     switch (option)
     {
         case 1:
