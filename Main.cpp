@@ -175,6 +175,7 @@ runComparePlayerOptions (int option)
 
     std::cout << "********************************" << "\n";
 
+    // Some of these cases contain multiple head to heads
     switch (option)
     {
         case 1:
