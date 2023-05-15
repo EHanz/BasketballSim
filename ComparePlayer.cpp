@@ -25,8 +25,7 @@ ComparePlayer :: ~ComparePlayer ()
 
 }
 
-// Might use this to assign the vector values to individual floats
-// Might not need this...
+// TODO: break the vector down to individual floats
 void
 ComparePlayer :: assignVecToFloats ()
 {
