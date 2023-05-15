@@ -151,10 +151,3 @@ League :: setPlayersFromMatrix (const std::string& filename)
         league_matrix.push_back (parsedRow);
     }
 }
-
-// TODO: Sort the Players by their name, alphabetically
-void
-League :: sortPlayersByName ()
-{
-    
-}
