@@ -216,6 +216,7 @@ runComparePlayerOptions (int option)
             headToHeadResults (result, "Points Per Game");
             break;
         case 7:
+            // Tally Two Points Stats
             std::cout << "Comparing Two Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerTwoPointMade ();
             headToHeadResults (result, "Two Points Made Per Game");
