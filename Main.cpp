@@ -297,6 +297,7 @@ printMenuText ()
 // Ask user for a player name and then extract the stats associated with
 // that player and print it out
 // TODO: Make searching for players easier
+// TODO: Break these down into smaller functions
 void
 runMainMenuOptions (int option)
 {
