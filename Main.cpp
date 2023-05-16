@@ -203,6 +203,7 @@ runComparePlayerOptions (int option)
             headToHeadResults (result, "Free Throw Percentage Per Game");
             break;
         case 5:
+            // Tally the Games stats
             std::cout << "Comparing Games Played..." << "\n";
             result = s_compare_player -> comparePlayerGames ();
             headToHeadResults (result, "Games Played");
