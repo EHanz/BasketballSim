@@ -168,6 +168,7 @@ printComparePlayerMenu ()
 }
 
 // Executes functions depending on option chosen from the menu
+// TODO: Break these cases down into smaller functions
 void
 runComparePlayerOptions (int option)
 {
