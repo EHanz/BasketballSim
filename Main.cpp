@@ -226,6 +226,7 @@ runComparePlayerOptions (int option)
             headToHeadResults (result, "Two Point Percentage");
             break;
         case 8:
+            // Tally Three Point Stats
             std::cout << "Comparing Three Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerThreePointMade ();
             headToHeadResults (result, "Three Points Made Per Game");
@@ -235,6 +236,7 @@ runComparePlayerOptions (int option)
             headToHeadResults (result, "Three Point Percentage");
             break;
         case 9:
+            // Tally Rebound Stats
             std::cout << "Comparing Rebounds Per Game..." << "\n";
             result = s_compare_player -> comparePlayerTotalRebounds ();
             headToHeadResults (result, "Total Rebounds Per Game");
