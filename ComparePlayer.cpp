@@ -32,7 +32,9 @@ ComparePlayer :: assignVecToFloats ()
     
 }
 
+/***************************************************************/
 // Below are the series of stat comparison functions
+
 int
 ComparePlayer :: comparePlayerAssists ()
 {
@@ -296,6 +298,8 @@ ComparePlayer :: comparePlayerTwoPointPct ()
     else if (player_two_stats[11] > player_one_stats[11]) { return 2; }
     else { return 0; }
 }
+
+/***************************************************************/
 
 // Runs through the functions and keeps track who has better stats
 // in each of the categories
