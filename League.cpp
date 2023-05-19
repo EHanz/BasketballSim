@@ -84,6 +84,7 @@ League :: getPlayersFromLeague ()
 // TODO: List all the players in the league
 // in an ORGANIZED fashion
 // As of right now, the players are listed in order by index number
+// AND alphabetical order
 int
 League :: listPlayersInLeague ()
 {
