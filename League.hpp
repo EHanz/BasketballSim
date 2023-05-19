@@ -22,7 +22,7 @@
 class League
 {
     public:
-        // Class Constructor and Deconstructor
+        // Class Constructor and Destructor
 
         League ();
         ~League ();
