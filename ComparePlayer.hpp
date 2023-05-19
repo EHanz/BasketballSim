@@ -26,7 +26,7 @@
 class ComparePlayer
 {
     public:
-        // Class Constructor and Deconstructor
+        // Class Constructor and Destructor
 
         ComparePlayer ();
         ~ComparePlayer ();
@@ -36,7 +36,7 @@ class ComparePlayer
         void
         assignVecToFloats ();
 
-        // Maybe find a way to compare stats using less functions
+        // Find how to mesh the stats into one function
 
         int
         comparePlayerAssists ();
