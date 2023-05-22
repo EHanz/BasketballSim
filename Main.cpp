@@ -181,6 +181,7 @@ runComparePlayerOptions (int option)
     switch (option)
     {
         case 1:
+            // Head to Head Case
             std::cout << "Player stat head to head..." << "\n";
             result = s_compare_player -> playerHeadToHead ();
             headToHeadResults (result, "Head to Head ");
