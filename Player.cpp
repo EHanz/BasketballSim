@@ -38,7 +38,7 @@ Player :: ~Player ()
 std::vector <float>
 Player :: getPlayerStats () { return p_stats; }
 
-// Sets advanced stats such as PER and box scores for a player
+// Sets advanced stats such as PER and box +/- scores for a player
 // TODO: find out how to read in advanced stat csvs
 void
 Player :: setAdvancedStats ()
