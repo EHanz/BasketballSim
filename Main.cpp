@@ -258,6 +258,7 @@ runComparePlayerOptions (int option)
             break;
 
         case 10:
+            // Tally Steals Stats
             std::cout << "Comparing Steals Per Game..." << "\n";
             result = s_compare_player -> comparePlayerSteals ();
             headToHeadResults (result, "Steals Per Game");
