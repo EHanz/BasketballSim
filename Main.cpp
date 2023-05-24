@@ -181,49 +181,60 @@ runComparePlayerOptions (int option)
             result = s_compare_player -> playerHeadToHead ();
             headToHeadResults (result);
             break;
+
         case 2:
             std::cout << "Comparing Assists Per Game..." << "\n";
             result = s_compare_player -> comparePlayerAssists ();
             headToHeadResults (result);
             break;
+
         case 3:
             std::cout << "Comparing Blocks Per Game..." << "\n";
             result = s_compare_player -> comparePlayerBlocks ();
             headToHeadResults (result);
             break;
+
         case 4:
             std::cout << "Comparing Free Throws Per Game..." << "\n";
             result = s_compare_player -> comparePlayerFreeThrowsMade ();
             headToHeadResults (result);
             break;
+
         case 5:
             std::cout << "Comparing Games Played..." << "\n";
             result = s_compare_player -> comparePlayerGames ();
             headToHeadResults (result);
             break;
+
         case 6:
             std::cout << "Comparing Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerPPG ();
             headToHeadResults (result);
             break;
+
         case 7:
             std::cout << "Comparing Rebounds Per Game..." << "\n";
             result = s_compare_player -> comparePlayerTotalRebounds ();
             headToHeadResults (result);
             break;
+
         case 8:
             std::cout << "Comparing Steals Per Game..." << "\n";
             result = s_compare_player -> comparePlayerSteals ();
             headToHeadResults (result);
             break;
+
         case 9:
             printMenuText ();
             break;
+
         case 10:
             exit (0);
+
         default:
             std::cout << "That is not a valid option..." << "\n";
             break;
+            
     }
 
     std::cout << "********************************" << "\n";
