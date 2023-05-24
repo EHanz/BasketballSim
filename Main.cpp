@@ -39,7 +39,7 @@ void
 init ();
 
 void
-headToHeadResults (int);
+headToHeadResults (int, std::string);
 
 void
 printComparePlayerMenu ();
@@ -77,7 +77,7 @@ int main ()
     // TODO: Find where the csv files are for individual teams
     // and the player stats per game
 
-    //testTeamClass ();
+    testTeamClass ();
 
     // TODO: implement league player csv file and find a good way to
     // navigate something that large besides vec matrix
@@ -112,21 +112,22 @@ init ()
     s_league -> setLeagueMatrix (leagueFilename);
 
     // Boots up the matrix of the Sixers Team
-    s_team -> setTeamMatrix (teamFilename);
+    //s_team -> setTeamMatrix (teamFilename);
 }
 
 // Puts both players in a head to head matchup
 // Player wins if they win in more categories
+// Add tally option if there are more than one stat for the matchup
 void
-headToHeadResults (int result)
+headToHeadResults (int result, std::string statName)
 {
     if (result == 1) 
     {
-        std::cout << playerOneName << " won the matchup!" << "\n";
+        std::cout << playerOneName << " won the " << statName << "matchup!" << "\n";
     } 
     else if (result == 2) 
     {
-        std::cout << playerTwoName << " won the matchup!" << "\n";
+        std::cout << playerTwoName << " won the " << statName << "matchup!" << "\n";
     } 
     else 
     {
@@ -153,10 +154,12 @@ printComparePlayerMenu ()
     std::cout << "4. More Free Throws " << "\n";
     std::cout << "5. More Games Played " << "\n";
     std::cout << "6. More PPG " << "\n";
-    std::cout << "7. More Rebounds " << "\n";
-    std::cout << "8. More Steals " << "\n";
-    std::cout << "9. Main Menu " << "\n";
-    std::cout << "10. Exit Simulator " << "\n"; 
+    std::cout << "7. Two Points Per Game " << "\n";
+    std::cout << "8. Three Points Per Game " << "\n";
+    std::cout << "9. More Rebounds " << "\n";
+    std::cout << "10. More Steals " << "\n";
+    std::cout << "11. Main Menu " << "\n";
+    std::cout << "12. Exit Simulator " << "\n"; 
 
     std::cin >> option;
 
@@ -166,6 +169,7 @@ printComparePlayerMenu ()
 }
 
 // Executes functions depending on option chosen from the menu
+// TODO: Break these cases down into smaller functions
 void
 runComparePlayerOptions (int option)
 {
@@ -173,64 +177,96 @@ runComparePlayerOptions (int option)
 
     std::cout << "********************************" << "\n";
 
-    // Testing the switch/case statement
+    // Some of these cases contain multiple head to heads
     switch (option)
     {
         case 1:
+            // Head to Head Case
             std::cout << "Player stat head to head..." << "\n";
             result = s_compare_player -> playerHeadToHead ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Head to Head ");
             break;
 
         case 2:
             std::cout << "Comparing Assists Per Game..." << "\n";
             result = s_compare_player -> comparePlayerAssists ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Assists");
             break;
 
         case 3:
             std::cout << "Comparing Blocks Per Game..." << "\n";
             result = s_compare_player -> comparePlayerBlocks ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Blocks");
             break;
 
         case 4:
             std::cout << "Comparing Free Throws Per Game..." << "\n";
             result = s_compare_player -> comparePlayerFreeThrowsMade ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Free Throws Made Per Game");
+            result = s_compare_player -> comparePlayerFreeThrowAttempts ();
+            headToHeadResults (result, "Free Throw Attempts Per Game");
+            result = s_compare_player -> comparePlayerFreeThrowPercentage ();
+            headToHeadResults (result, "Free Throw Percentage Per Game");
             break;
 
         case 5:
+            // Tally the Games stats
             std::cout << "Comparing Games Played..." << "\n";
             result = s_compare_player -> comparePlayerGames ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Games Played");
+            result = s_compare_player -> comparePlayerGameStarts ();
+            headToHeadResults (result, "Games Started");
             break;
 
         case 6:
             std::cout << "Comparing Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerPPG ();
-            headToHeadResults (result);
+            headToHeadResults (result, "Points Per Game");
             break;
 
         case 7:
-            std::cout << "Comparing Rebounds Per Game..." << "\n";
-            result = s_compare_player -> comparePlayerTotalRebounds ();
-            headToHeadResults (result);
+            // Tally Two Points Stats
+            std::cout << "Comparing Two Points Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerTwoPointMade ();
+            headToHeadResults (result, "Two Points Made Per Game");
+            result = s_compare_player -> comparePlayerTwoPointAttempts ();
+            headToHeadResults (result, "Two Point Attempts Per Game");
+            result = s_compare_player -> comparePlayerTwoPointPct ();
+            headToHeadResults (result, "Two Point Percentage");
             break;
 
         case 8:
-            std::cout << "Comparing Steals Per Game..." << "\n";
-            result = s_compare_player -> comparePlayerSteals ();
-            headToHeadResults (result);
+            // Tally Three Point Stats
+            std::cout << "Comparing Three Points Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerThreePointMade ();
+            headToHeadResults (result, "Three Points Made Per Game");
+            result = s_compare_player -> comparePlayerThreePointAttempts ();
+            headToHeadResults (result, "Three Point Attempts Per Game");
+            result = s_compare_player -> comparePlayerThreePointPct ();
+            headToHeadResults (result, "Three Point Percentage");
             break;
 
         case 9:
-            printMenuText ();
+            // Tally Rebound Stats
+            std::cout << "Comparing Rebounds Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerTotalRebounds ();
+            headToHeadResults (result, "Total Rebounds Per Game");
+            result = s_compare_player -> comparePlayerOffensiveRebounds ();
+            headToHeadResults (result, "Offensive Rebounds Per Game");
+            result = s_compare_player -> comparePlayerDefensiveRebounds ();
+            headToHeadResults (result, "Defensive Rebounds Per Game");
             break;
 
         case 10:
+            std::cout << "Comparing Steals Per Game..." << "\n";
+            result = s_compare_player -> comparePlayerSteals ();
+            headToHeadResults (result, "Steals Per Game");
+            break;
+        case 11:
+            printMenuText ();
+            break;
+        case 12:
             exit (0);
-
         default:
             std::cout << "That is not a valid option..." << "\n";
             break;
@@ -273,6 +309,7 @@ printMenuText ()
 // Ask user for a player name and then extract the stats associated with
 // that player and print it out
 // TODO: Make searching for players easier
+// TODO: Break these down into smaller functions
 void
 runMainMenuOptions (int option)
 {
@@ -342,7 +379,7 @@ runMainMenuOptions (int option)
 
         case 7:
             std::cout << "Viewing " << playerTwoName << " Stats " << "\n";
-            s_player_two -> getPlayerStats ();
+            s_player_two -> printIndividualStats ();
             break;
 
         case 8:

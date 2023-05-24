@@ -21,7 +21,7 @@
 class Player
 {
     public: 
-        // Class Constructors and Deconstructor
+        // Class Constructors and Destructor
 
         Player ();
 

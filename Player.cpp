@@ -38,7 +38,7 @@ Player :: ~Player ()
 std::vector <float>
 Player :: getPlayerStats () { return p_stats; }
 
-// Sets advanced stats such as PER and box scores for a player
+// Sets advanced stats such as PER and box +/- scores for a player
 // TODO: find out how to read in advanced stat csvs
 void
 Player :: setAdvancedStats ()
@@ -47,9 +47,10 @@ Player :: setAdvancedStats ()
 }
 
 // Sets the individual stats of each variable provided from a team csv
-// TODO: Find a better way to do this
+// TODO: Find a way to assign vars that isn't hardcoded
 // NOTE: There are player game logs for each season
 // NOTE: There are also logs for a player's career
+// NOTE: Get vector length and use that as the base for the index
 void
 Player :: setIndividualStats ()
 {

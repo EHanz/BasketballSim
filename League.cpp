@@ -84,6 +84,7 @@ League :: getPlayersFromLeague ()
 // TODO: List all the players in the league
 // in an ORGANIZED fashion
 // As of right now, the players are listed in order by index number
+// AND alphabetical order
 int
 League :: listPlayersInLeague ()
 {
@@ -150,11 +151,4 @@ League :: setPlayersFromMatrix (const std::string& filename)
 
         league_matrix.push_back (parsedRow);
     }
-}
-
-// TODO: Sort the Players by their name, alphabetically
-void
-League :: sortPlayersByName ()
-{
-    
 }

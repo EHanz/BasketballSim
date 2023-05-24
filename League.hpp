@@ -22,7 +22,7 @@
 class League
 {
     public:
-        // Class Constructor and Deconstructor
+        // Class Constructor and Destructor
 
         League ();
         ~League ();
@@ -49,14 +49,11 @@ class League
 
         void
         setPlayersFromMatrix (const std::string& filename);
-
-        void
-        sortPlayersByName ();
+        
 
     private:
         // Class Variables
 
-        // Might want to switch to a different data type
         std::vector <std::vector <std::string>> league_matrix;
 
         // Vector of Players in League

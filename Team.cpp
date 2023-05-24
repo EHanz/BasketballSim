@@ -67,5 +67,5 @@ Team :: testMatrix ()
 {
     std::cout << "********************************" << "\n";
 
-    return team_matrix[0][1];
+    return "Matrix Test";
 }
