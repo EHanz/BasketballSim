@@ -188,18 +188,21 @@ runComparePlayerOptions (int option)
             break;
 
         case 2:
+            // Tally the Assists Stats
             std::cout << "Comparing Assists Per Game..." << "\n";
             result = s_compare_player -> comparePlayerAssists ();
             headToHeadResults (result, "Assists");
             break;
 
         case 3:
+            // Tally the Blocks Stats
             std::cout << "Comparing Blocks Per Game..." << "\n";
             result = s_compare_player -> comparePlayerBlocks ();
             headToHeadResults (result, "Blocks");
             break;
 
         case 4:
+            // Tally the Free Throws Stats
             std::cout << "Comparing Free Throws Per Game..." << "\n";
             result = s_compare_player -> comparePlayerFreeThrowsMade ();
             headToHeadResults (result, "Free Throws Made Per Game");
@@ -210,7 +213,7 @@ runComparePlayerOptions (int option)
             break;
 
         case 5:
-            // Tally the Games stats
+            // Tally the Games Stats
             std::cout << "Comparing Games Played..." << "\n";
             result = s_compare_player -> comparePlayerGames ();
             headToHeadResults (result, "Games Played");
@@ -219,6 +222,7 @@ runComparePlayerOptions (int option)
             break;
 
         case 6:
+            // Tally the Points Stats
             std::cout << "Comparing Points Per Game..." << "\n";
             result = s_compare_player -> comparePlayerPPG ();
             headToHeadResults (result, "Points Per Game");
