@@ -269,14 +269,17 @@ runComparePlayerOptions (int option)
             break;
 
         case 11:
+            // Switches Back To Main Menu
             printMenuText ();
             break;
 
         case 12:
+            // Exit the Program
             exit (0);
             break;
 
         default:
+            // Prints if User Gives Incorrect Input
             std::cout << "That is not a valid option..." << "\n";
             break;
             
