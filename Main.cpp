@@ -263,11 +263,15 @@ runComparePlayerOptions (int option)
             result = s_compare_player -> comparePlayerSteals ();
             headToHeadResults (result, "Steals Per Game");
             break;
+
         case 11:
             printMenuText ();
             break;
+
         case 12:
             exit (0);
+            break;
+
         default:
             std::cout << "That is not a valid option..." << "\n";
             break;
