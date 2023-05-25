@@ -92,7 +92,6 @@ int main ()
 // Driver Functions
 
 // Init those lousy pointers and set the League Matrix
-// Maybe switch from pointer to reference??
 void
 init ()
 {
