@@ -133,6 +133,12 @@ headToHeadResults (int result, std::string statName)
     }
 }
 
+void
+headToHeadTally ()
+{
+    
+}
+
 // Prints Compare Player Menu Options
 // TODO: Make the text menus nicer
 // Add some dividers, clear the console, etc
