@@ -180,6 +180,10 @@ runComparePlayerOptions (int option)
 {
     int result = 0;
 
+    // Counts the results of the head to heads
+    int p_one_tally = 0;
+    int p_two_tally = 0;
+
     std::cout << "********************************" << "\n";
 
     // Some of these cases contain multiple head to heads
