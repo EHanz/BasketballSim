@@ -133,10 +133,11 @@ headToHeadResults (int result, std::string statName)
     }
 }
 
+// Tallies up the results if there are multiple stats
 void
 headToHeadTally ()
 {
-    
+
 }
 
 // Prints Compare Player Menu Options
