@@ -116,7 +116,6 @@ init ()
 
 // Puts both players in a head to head matchup
 // Player wins if they win in more categories
-// Add tally option if there are more than one stat for the matchup
 void
 headToHeadResults (int result, std::string statName)
 {
