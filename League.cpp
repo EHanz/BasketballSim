@@ -62,6 +62,8 @@ League :: getPlayerFromLeague (std::string playerName)
 std::vector <std::string>
 League :: getPlayerFromLeague (int index)
 {
+  // Write a search algorithm that finds players with first/last name user provides
+  // This is better than having to write out a full player name every time
     std::vector <std::string> p_vector;
     
     for (int j = 0; j < league_matrix[index].size (); j++)
