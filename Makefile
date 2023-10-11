@@ -1,11 +1,4 @@
 ########################################################
-# Makefile for CSCI 375
-#   In many cases you will ONLY need to modify the
-#   SRCS variable below
-# Author: Gary M. Zoppetti, Ph.D. and Chad Hogg
-########################################################
-
-########################################################
 # Variable definitions
 ########################################################
 # C++ compiler
